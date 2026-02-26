@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IGESCOL - Diseño Estructural y Proyectos</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00BCD4", // Cyan
+              secondary: "#1A237E", // Navy Blue
+              "background-light": "#FFFFFF",
+              "background-dark": "#0F172A",
+              "surface-light": "#F8FAFC",
+              "surface-dark": "#1E293B",
+              "text-main-light": "#1A237E",
+              "text-main-dark": "#E2E8F0",
+              "text-body-light": "#475569",
+              "text-body-dark": "#94A3B8"
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --topo-pattern: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 380c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 340c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 300c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 260c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 220c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 180c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 140c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 100c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 60c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 20c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0' stroke='%2300BCD4' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3C/svg%3E");
+        }
+        .topo-bg {
+            background-image: var(--topo-pattern);
+        }
+        .grid-pattern {
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans transition-colors duration-300 grid-pattern">
+<div class="bg-white/80 backdrop-blur-md dark:bg-surface-dark/80 border-b border-gray-100 dark:border-gray-800 fixed w-full z-[60]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-10 text-xs sm:text-sm">
+<div class="hidden sm:flex space-x-6 text-text-body-light dark:text-text-body-dark">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-sm mr-1">phone</span>
+<span>+1 222 333-44-55</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-sm mr-1">schedule</span>
+<span>Mon-Sat 08:00-18:00</span>
+</div>
+</div>
+<div class="flex space-x-4 ml-auto text-text-main-light dark:text-text-main-dark">
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">facebook</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">smart_display</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">photo_camera</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">work</i></a>
+</div>
+</div>
+</div>
+</div>
+<nav class="bg-white/90 backdrop-blur-lg dark:bg-surface-dark/90 shadow-sm fixed top-10 w-full z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20 items-center">
+<div class="flex-shrink-0 flex items-center">
+<div class="flex items-center gap-2">
+<div class="text-primary bg-primary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl">layers</span>
+</div>
+<span class="font-bold text-2xl tracking-tighter text-text-main-light dark:text-white">IGESCOL</span>
+</div>
+</div>
+<div class="hidden md:flex space-x-10">
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Inicio</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Nosotros</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Servicios</a>
+<a class="text-primary font-bold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="#">Proyectos</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Contacto</a>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-gray-500 hover:text-primary focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="relative pt-48 pb-32 overflow-hidden bg-slate-900 text-white">
+<div class="absolute inset-0 z-0">
+<img alt="Structural BIM Model Wireframe" class="w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_v7gpM-ptf5ZVypXKi0czzsE_9cGfedcckqAkGf4LCiDgDuwT9ska7dRvbeE7nh9XBxzGQScF7bT8t_LpaftNfFXS_Z36GZiLaQMgsVyrfp-BgMubZt5W_OnNOoo110H6X_9kd8sb7E4RtvRgXwNe_N4PMLEwfF0RTofQNqAVEcUuBE7pzSFOmGGxCOvmqwreQbdMFpnX7ztVqepvQtKOh2V319J5J53ExtxHoi6e1ILW0rQup_JeSE0awQJfkbGTB8WyFkwtDTUi"/>
+<div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 font-bold text-xs mb-6 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">engineering</span>
+                        Ingeniería de Precisión
+                    </div>
+<h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                        DISEÑO <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">ESTRUCTURAL</span>
+</h1>
+<p class="text-xl text-gray-300 mb-10 max-w-xl leading-relaxed font-light">
+                        Soluciones estructurales optimizadas mediante metodología BIM, garantizando seguridad sismorresistente y eficiencia en materiales.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-5">
+<a class="bg-primary hover:bg-cyan-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2" href="#proyectos">
+                            VER PROYECTOS
+                            <span class="material-symbols-outlined">arrow_downward</span>
+</a>
+<a class="bg-transparent border border-gray-600 hover:border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white/5 transition-all flex items-center justify-center gap-2" href="#">
+                            CONSULTAR SERVICIOS
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative hidden lg:block">
+<div class="relative w-full h-[400px] border border-white/10 bg-white/5 backdrop-blur-sm rounded-lg p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-bold text-primary">BIM LEVEL 2</h3>
+<p class="text-xs text-gray-400">ISO 19650 Compliant</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-gray-600">deployed_code</span>
+</div>
+<div class="space-y-4">
+<div class="h-2 bg-gray-700 rounded-full w-3/4"></div>
+<div class="h-2 bg-gray-700 rounded-full w-full"></div>
+<div class="h-2 bg-gray-700 rounded-full w-5/6"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-8">
+<div class="bg-slate-800 p-4 rounded border border-slate-700">
+<span class="block text-3xl font-bold text-white">98%</span>
+<span class="text-xs text-gray-400 uppercase">Precisión Material</span>
+</div>
+<div class="bg-slate-800 p-4 rounded border border-slate-700">
+<span class="block text-3xl font-bold text-white">-15%</span>
+<span class="text-xs text-gray-400 uppercase">Costos Obra</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="py-20 bg-surface-light border-b border-gray-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex gap-4 items-start p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+<div class="p-3 bg-secondary/10 text-secondary rounded-lg">
+<span class="material-symbols-outlined text-3xl">security</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-secondary mb-2">Seguridad Sísmica</h3>
+<p class="text-sm text-text-body-light leading-relaxed">Cumplimiento estricto de la normativa NSR-10 y estándares internacionales de sismorresistencia.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+<div class="p-3 bg-primary/10 text-primary rounded-lg">
+<span class="material-symbols-outlined text-3xl">view_in_ar</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-secondary mb-2">Modelado BIM</h3>
+<p class="text-sm text-text-body-light leading-relaxed">Coordinación 3D integral para detección de interferencias y gestión eficiente del ciclo de vida.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+<div class="p-3 bg-cyan-900/10 text-cyan-900 rounded-lg">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-secondary mb-2">Optimización de Materiales</h3>
+<p class="text-sm text-text-body-light leading-relaxed">Diseño eficiente que maximiza el rendimiento del acero y concreto sin comprometer la seguridad.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white topo-bg relative" id="proyectos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<div class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs mb-4 uppercase tracking-widest">Portafolio</div>
+<h2 class="text-4xl md:text-5xl font-black text-secondary tracking-tight">Nuestros Proyectos</h2>
+</div>
+<p class="text-text-body-light max-w-lg text-right md:text-left text-lg font-medium border-l-4 border-primary pl-4">
+                    Experiencia técnica aplicada en infraestructuras complejas y desarrollos urbanos.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Infraestructura Vial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZf_3qTI-tUOmB7c42UvQ_kO4ID2lWPwE3yCLZI6oluHGi7T2z4mnlaRKRapSiTqIJ-fW-7n2TKYpUjccu3RLqcPleraFOHI_L7MEvPArK6XDqc9FTZKU4kiiXipc8wsQU3Q3SjgRUkhbWmMdq63WBxiXgDcnuGXceMb49q8nurW0xKONCUzovV78c8I6EkA8vpxFju5SPL2DtbGlZ4EpYrFjTf14sxShurxllsxYLRyNrJewQ7RxzFu90wCbO8NIUboW8LiVKS0dC"/>
+<div class="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 to-transparent p-6 flex items-end">
+<span class="text-white text-xs font-mono tracking-wider opacity-80">REF: INF-2023-01</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-white relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded uppercase tracking-wider border border-primary/20">Infraestructura Vial</span>
+<span class="text-gray-400 text-xs font-bold bg-gray-100 px-2 py-1 rounded">2023</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Conexión Vial Región Sur</h3>
+<div class="py-4 border-t border-b border-gray-100 my-4 grid grid-cols-2 gap-4">
+<div>
+<span class="block text-xs text-gray-500 uppercase">Longitud</span>
+<span class="block text-sm font-bold text-secondary">45 km</span>
+</div>
+<div>
+<span class="block text-xs text-gray-500 uppercase">Categoría</span>
+<span class="block text-sm font-bold text-secondary">Primaria</span>
+</div>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link pt-2" href="#">
+                            VER DETALLES TÉCNICOS <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Edificio Residencial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTMZZKZ888e0JdXK4ya0OBHK91PbwwmBS75ScynydsVuCzN9f5_f0bezp6LnsIGl5LWPDSvzXLYkdmJDjA4GMD9CR7hqNLNGGu0LICTcuoTNW3ne-6Cj8KZvSRFkOVy0JOE0qvVtasCc8Suichy2Vo2Zpw0j6XuHfL2HLC2wy9ocSavG7NmCBYwH2K8y2ZPCXjEEPrkBjXk7MmI-4uY8SWRCX4Fbqqpd6RKj45i6Ty1ya1A19yKr-Nx1hYsTdtzYLiEVejE--upX5n"/>
+<div class="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 to-transparent p-6 flex items-end">
+<span class="text-white text-xs font-mono tracking-wider opacity-80">REF: RES-2022-15</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-white relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded uppercase tracking-wider border border-primary/20">Residencial</span>
+<span class="text-gray-400 text-xs font-bold bg-gray-100 px-2 py-1 rounded">2022</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Torres Altos del Norte</h3>
+<div class="py-4 border-t border-b border-gray-100 my-4 grid grid-cols-2 gap-4">
+<div>
+<span class="block text-xs text-gray-500 uppercase">Área</span>
+<span class="block text-sm font-bold text-secondary">12,500 m²</span>
+</div>
+<div>
+<span class="block text-xs text-gray-500 uppercase">Altura</span>
+<span class="block text-sm font-bold text-secondary">15 Pisos</span>
+</div>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link pt-2" href="#">
+                            VER DETALLES TÉCNICOS <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Estructura Comercial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp6p9OUxuBloFa8ilPCOYL5t3HwSecAAzn0ZHnvmMUlIPaYpLe_ilWiv1qCmYMJluysKsEGL823hXXrk6pCdJG5AZMRPRusbQ_-euEkENsWlv2SDppYrGzx3dcMuZC9bubaGFbsBWQ5XQ5Y5jwI0JSZpFqfC6txYvO3yedlmXxQkHiefUDhxyXwrnTV1udSJPg6VMS5qGqZbkiMuoXvRV3W-UGtV16uxjLO3tDfWCmmFsmw7mbieusZpI18w59ljpRwuntWHxsXTi5"/>
+<div class="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 to-transparent p-6 flex items-end">
+<span class="text-white text-xs font-mono tracking-wider opacity-80">REF: COM-2023-08</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-white relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded uppercase tracking-wider border border-primary/20">Comercial</span>
+<span class="text-gray-400 text-xs font-bold bg-gray-100 px-2 py-1 rounded">2023</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Centro Comercial Plaza</h3>
+<div class="py-4 border-t border-b border-gray-100 my-4 grid grid-cols-2 gap-4">
+<div>
+<span class="block text-xs text-gray-500 uppercase">Acero</span>
+<span class="block text-sm font-bold text-secondary">450 Ton</span>
+</div>
+<div>
+<span class="block text-xs text-gray-500 uppercase">Sistema</span>
+<span class="block text-sm font-bold text-secondary">Aporticado</span>
+</div>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link pt-2" href="#">
+                             VER DETALLES TÉCNICOS <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Intersección Urbana" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuSh4v_IrW-eOTbH590fDLQCQKAraXFYA3Oo8twwIyu2J0jd2WaU0HS9lR49kmK1czkv61M6p6-8hjRFlccxnU6KDsKYeg0HMIA6126Iq6sVL5Cp0PIRvVBfjcyDZa-aN2JjH4uxx5AYdk8AjxNLIXyr3Fs3Nb4d-DUa-tb1Nok80r_vTFjOSV9r6fCu1-HgG76Vejm0Fa51AOEazsI6tfOGwR7r8ElijRWMs4XmmjS67sH35cHB3HZbKmb-1IZeLFT8lWJ8kz82wI"/>
+<div class="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 to-transparent p-6 flex items-end">
+<span class="text-white text-xs font-mono tracking-wider opacity-80">REF: URB-2021-03</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-white relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded uppercase tracking-wider border border-primary/20">Infraestructura</span>
+<span class="text-gray-400 text-xs font-bold bg-gray-100 px-2 py-1 rounded">2021</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Intersección Calle 80</h3>
+<div class="py-4 border-t border-b border-gray-100 my-4 grid grid-cols-2 gap-4">
+<div>
+<span class="block text-xs text-gray-500 uppercase">Flujo</span>
+<span class="block text-sm font-bold text-secondary">Alto</span>
+</div>
+<div>
+<span class="block text-xs text-gray-500 uppercase">Concreto</span>
+<span class="block text-sm font-bold text-secondary">Rigido</span>
+</div>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link pt-2" href="#">
+                             VER DETALLES TÉCNICOS <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Sistema Domótica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU1zqxvB3VuCDEOvjVfqTJqGl5KXVpLZ88sbzy7dX810nhzO9i2_JB8rWe8REAxPCRrOvdkZ4Z-LDq00wXTJXoFvD0aSD4F75YLphY2jfhFyY2GyBh0clWuV4Miq2Ibuv9HqtsHSbEGJ9bcpz0y6XgPEuVL5q7NIBRZXLVi6yf7AGC_kl9nY6DskQ1WXxo2YKN_BlnPrf9uOxxeI9njgU5lCZWVruOJG57LjGgJx9iwPKg4jrXbEqjGnBv8EKKxz57X4SVWpArKo0D"/>
+<div class="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 to-transparent p-6 flex items-end">
+<span class="text-white text-xs font-mono tracking-wider opacity-80">REF: TEC-2024-01</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-white relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded uppercase tracking-wider border border-primary/20">Tecnología</span>
+<span class="text-gray-400 text-xs font-bold bg-gray-100 px-2 py-1 rounded">2024</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Smart Home Systems</h3>
+<div class="py-4 border-t border-b border-gray-100 my-4 grid grid-cols-2 gap-4">
+<div>
+<span class="block text-xs text-gray-500 uppercase">Dispositivos</span>
+<span class="block text-sm font-bold text-secondary">120+</span>
+</div>
+<div>
+<span class="block text-xs text-gray-500 uppercase">Ahorro</span>
+<span class="block text-sm font-bold text-secondary">30% Energía</span>
+</div>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link pt-2" href="#">
+                             VER DETALLES TÉCNICOS <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden bg-slate-100">
+<img alt="Plano BIM" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 p-8 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAle6GYvgdcZon18_NbyhO5Mc-ROs2cxAEC6LcemPERVMU9bx3jB9TWsQhxC7uKw_aq0W7k3misyDgF3V2TFt7j3mPDS1yz1kIcSylxFOnek6FHDhXLncGSq__a6DkEgT-FNQqnQM0uCpHtldnEYOMgVF6qQQFcuvKUhOEsFPitwlAwr6yqa3yPKE9h0sDv3mfnp_oJum16N9N4Sy8HAGCrLYDX-fcr30Ty2XLA2QOvKSkYp4kC_M4s17X_K4NHTlAlZ35HDf70jhsD"/>
+<div class="absolute inset-0 bg-secondary/5 group-hover:bg-transparent transition-colors duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 to-transparent p-6 flex items-end">
+<span class="text-white text-xs font-mono tracking-wider opacity-80">REF: BIM-2023-11</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-white relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded uppercase tracking-wider border border-primary/20">BIM Modeling</span>
+<span class="text-gray-400 text-xs font-bold bg-gray-100 px-2 py-1 rounded">2023</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Auditoría Estructural 3D</h3>
+<div class="py-4 border-t border-b border-gray-100 my-4 grid grid-cols-2 gap-4">
+<div>
+<span class="block text-xs text-gray-500 uppercase">LOD</span>
+<span class="block text-sm font-bold text-secondary">400</span>
+</div>
+<div>
+<span class="block text-xs text-gray-500 uppercase">Software</span>
+<span class="block text-sm font-bold text-secondary">Revit</span>
+</div>
+</div>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link pt-2" href="#">
+                             VER DETALLES TÉCNICOS <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<a class="inline-flex items-center justify-center bg-secondary hover:bg-primary text-white font-bold py-4 px-10 rounded-lg shadow-xl transition-all transform hover:-translate-y-1" href="#">
+                    VER PORTAFOLIO COMPLETO
+                    <span class="material-symbols-outlined ml-2">grid_view</span>
+</a>
+</div>
+</div>
+</section>
+<section class="py-32 bg-gray-50/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-white rounded-[4rem] overflow-hidden shadow-sm border border-gray-100">
+<div class="grid lg:grid-cols-2">
+<div class="p-16 lg:p-24 bg-surface-light">
+<h2 class="text-4xl md:text-5xl font-extrabold text-text-main-light mb-10">Contáctanos</h2>
+<p class="text-text-body-light mb-12 text-lg">Estamos listos para escuchar su proyecto y ofrecer soluciones integrales.</p>
+<div class="space-y-8">
+<div class="flex items-center group">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mr-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">phone</span>
+</div>
+<span class="text-text-main-light font-bold text-xl">+1 222 333-44-55</span>
+</div>
+<div class="flex items-center group">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mr-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">email</span>
+</div>
+<span class="text-text-main-light font-bold text-xl">info@igescol.corp</span>
+</div>
+<div class="flex items-center group">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mr-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<span class="text-text-main-light font-bold text-xl">Av. Principal 123, Oficina 404</span>
+</div>
+</div>
+</div>
+<div class="p-16 lg:p-24 bg-white flex items-center">
+<form class="w-full space-y-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<input class="w-full px-6 py-4 rounded-xl border-gray-200 bg-gray-50/50 shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition" placeholder="Nombre" type="text"/>
+<input class="w-full px-6 py-4 rounded-xl border-gray-200 bg-gray-50/50 shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition" placeholder="Asunto" type="text"/>
+</div>
+<input class="w-full px-6 py-4 rounded-xl border-gray-200 bg-gray-50/50 shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition" placeholder="Email *" required="" type="email"/>
+<textarea class="w-full px-6 py-4 rounded-xl border-gray-200 bg-gray-50/50 shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition" placeholder="Mensaje" rows="5"></textarea>
+<button class="w-full bg-secondary hover:bg-primary text-white font-extrabold py-5 rounded-xl shadow-xl shadow-secondary/20 transition-all transform hover:-translate-y-1 uppercase tracking-widest" type="submit">
+                                ENVIAR MENSAJE
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-secondary dark:bg-black py-12 text-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">layers</span>
+<span class="font-bold text-xl tracking-tighter">IGESCOL</span>
+</div>
+<p class="text-gray-400 text-sm">
+                © 2023 IGESCOL. Todos los derechos reservados.
+            </p>
+<div class="flex space-x-6 text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="hover:text-primary transition-colors" href="#">Términos</a>
+</div>
+</div>
+</footer>
+
+</body></html>

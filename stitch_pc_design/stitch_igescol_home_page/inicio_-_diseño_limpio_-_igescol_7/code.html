@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Proyectos: Domótica - IGESCOL</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00BCD4", // Cyan
+              secondary: "#1A237E", // Navy Blue
+              "background-light": "#FFFFFF",
+              "background-dark": "#0F172A",
+              "surface-light": "#F8FAFC",
+              "surface-dark": "#1E293B",
+              "text-main-light": "#1A237E",
+              "text-main-dark": "#E2E8F0",
+              "text-body-light": "#475569",
+              "text-body-dark": "#94A3B8"
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --topo-pattern: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 380c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 340c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 300c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 260c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 220c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 180c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 140c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 100c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 60c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 20c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0' stroke='%2300BCD4' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3C/svg%3E");
+        }
+        .topo-bg {
+            background-image: var(--topo-pattern);
+        }
+        .grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.02) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans transition-colors duration-300 grid-pattern">
+<div class="bg-white/80 backdrop-blur-md dark:bg-surface-dark/80 border-b border-gray-100 dark:border-gray-800 fixed w-full z-[60]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-10 text-xs sm:text-sm">
+<div class="hidden sm:flex space-x-6 text-text-body-light dark:text-text-body-dark">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-sm mr-1">phone</span>
+<span>+1 222 333-44-55</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-sm mr-1">schedule</span>
+<span>Lun-Sáb 08:00-18:00</span>
+</div>
+</div>
+<div class="flex space-x-4 ml-auto text-text-main-light dark:text-text-main-dark">
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">facebook</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">smart_display</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">photo_camera</i></a>
+</div>
+</div>
+</div>
+</div>
+<nav class="bg-white/90 backdrop-blur-lg dark:bg-surface-dark/90 shadow-sm fixed top-10 w-full z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20 items-center">
+<div class="flex-shrink-0 flex items-center">
+<a class="flex items-center gap-2" href="#">
+<div class="text-primary bg-primary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl">layers</span>
+</div>
+<span class="font-bold text-2xl tracking-tighter text-text-main-light dark:text-white">IGESCOL</span>
+</a>
+</div>
+<div class="hidden md:flex space-x-10">
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Inicio</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Nosotros</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Servicios</a>
+<a class="text-primary font-bold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="#">Proyectos</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Contacto</a>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-gray-500 hover:text-primary focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="relative pt-48 pb-32 overflow-hidden bg-white">
+<div class="absolute right-0 top-0 w-1/2 h-full -z-10 hidden lg:block opacity-30">
+<div class="absolute top-20 right-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="absolute bottom-10 right-40 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="lg:w-1/2 text-left">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">home_iot_device</span>
+<span class="text-primary font-bold text-xs uppercase tracking-widest">Smart Solutions</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-extrabold text-secondary dark:text-white leading-[1.1] mb-8">
+                    DOMÓTICA <br/>
+<span class="text-primary">RESIDENCIAL</span> Y <br/>
+                    CORPORATIVA
+                </h1>
+<p class="text-lg text-text-body-light dark:text-gray-300 mb-10 max-w-xl leading-relaxed font-light">
+                    Transformamos espacios convencionales en entornos inteligentes. Control total, eficiencia energética y seguridad integrada al alcance de su mano.
+                </p>
+<div class="flex flex-col sm:flex-row gap-5">
+<a class="bg-secondary hover:bg-primary text-white font-bold py-4 px-10 rounded-xl shadow-xl shadow-secondary/20 transition-all transform hover:-translate-y-1 text-center" href="#gallery">
+                        VER PROYECTOS
+                    </a>
+<a class="flex items-center justify-center gap-2 text-secondary font-bold hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+                        Ver Demo
+                    </a>
+</div>
+</div>
+<div class="lg:w-1/2 relative">
+<div class="relative z-20 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
+<img alt="Sleek smart home interior with tablet control" class="w-full h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRdy5lRwiivqf5Lemm05sSBV0YccwiXJOIbGtsk4crLCYx5AA1KQYVK_1g3AJlKKj1Ag2C6oSIYMGsStwvETHh9-tNoubC2AlGPy8D77AgyaVpw7uowR0aZ8N_jk20iCuPvFsdAZWm3NOjWj_23BrA-PbrkhOAX0SkMSIbqqsqCp_fK1a2sng92jeEK__SLwZufowtZJzmr-hA095FbUS6KGXWwK_AdGJ6qJZGAqQeHyVVk0m35ytpArY-ztLr3H-KUJA2o9Di9X99"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-8">
+<div class="flex justify-between items-end">
+<div class="text-white">
+<p class="text-sm opacity-80 uppercase tracking-wider mb-1">Proyecto Reciente</p>
+<p class="font-bold text-xl">Penthouse Mirador Norte</p>
+</div>
+<div class="bg-white/20 backdrop-blur-md p-3 rounded-full">
+<span class="material-symbols-outlined text-white">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -top-5 -right-5 w-24 h-24 bg-primary rounded-2xl -z-10 opacity-20 rotate-12"></div>
+<div class="absolute -bottom-5 -left-5 w-32 h-32 bg-secondary rounded-2xl -z-10 opacity-10 -rotate-6"></div>
+</div>
+</div>
+</div>
+</header>
+<section class="bg-surface-light border-y border-gray-200 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center md:text-left">
+<p class="text-4xl font-extrabold text-primary mb-2">350+</p>
+<p class="text-sm font-bold text-secondary uppercase tracking-wider">Hogares Inteligentes</p>
+</div>
+<div class="text-center md:text-left">
+<p class="text-4xl font-extrabold text-primary mb-2">40%</p>
+<p class="text-sm font-bold text-secondary uppercase tracking-wider">Ahorro Energético</p>
+</div>
+<div class="text-center md:text-left">
+<p class="text-4xl font-extrabold text-primary mb-2">24/7</p>
+<p class="text-sm font-bold text-secondary uppercase tracking-wider">Monitoreo Activo</p>
+</div>
+<div class="text-center md:text-left">
+<p class="text-4xl font-extrabold text-primary mb-2">100%</p>
+<p class="text-sm font-bold text-secondary uppercase tracking-wider">Personalizable</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="md:w-1/2 relative group">
+<div class="absolute inset-0 bg-primary/20 rounded-3xl rotate-3 transition-transform group-hover:rotate-6"></div>
+<img alt="3D rendering of smart home plan" class="relative z-10 rounded-3xl shadow-xl w-full object-cover h-[400px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp6p9OUxuBloFa8ilPCOYL5t3HwSecAAzn0ZHnvmMUlIPaYpLe_ilWiv1qCmYMJluysKsEGL823hXXrk6pCdJG5AZMRPRusbQ_-euEkENsWlv2SDppYrGzx3dcMuZC9bubaGFbsBWQ5XQ5Y5jwI0JSZpFqfC6txYvO3yedlmXxQkHiefUDhxyXwrnTV1udSJPg6VMS5qGqZbkiMuoXvRV3W-UGtV16uxjLO3tDfWCmmFsmw7mbieusZpI18w59ljpRwuntWHxsXTi5"/>
+<div class="absolute bottom-8 right-8 z-20 bg-white p-4 rounded-xl shadow-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-3xl">view_in_ar</span>
+<div>
+<p class="text-xs text-gray-500 uppercase font-bold">Tecnología</p>
+<p class="font-bold text-secondary">Modelado BIM 3D</p>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">architecture</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-extrabold text-secondary mb-6">Visualización 3D y Planificación</h2>
+<p class="text-text-body-light mb-8 leading-relaxed">
+                    Antes de instalar un solo cable, visualizamos su proyecto inteligente al detalle. Utilizamos software de modelado avanzado para planificar la ubicación de sensores, actuadores y paneles de control, garantizando una integración estética y funcional perfecta con la arquitectura de su hogar.
+                </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-text-body-light">Detección de interferencias estructurales.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-text-body-light">Simulación de escenarios de iluminación.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span class="text-text-body-light">Planimetría detallada para instaladores.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-light topo-bg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-3xl md:text-5xl font-extrabold text-secondary mb-4">Sistemas de Automatización</h2>
+<p class="text-text-body-light">Integramos tecnologías líderes para un control centralizado y eficiente.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all group hover:-translate-y-2">
+<div class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center text-secondary mb-8 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-4">Iluminación Inteligente</h3>
+<p class="text-text-body-light text-sm leading-relaxed mb-6">
+                    Control dimmable, cambios de temperatura de color (blanco dinámico) y escenas RGB integradas a la arquitectura.
+                </p>
+<div class="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0 group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+<div class="bg-white p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all group hover:-translate-y-2">
+<div class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center text-secondary mb-8 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">thermostat</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-4">Climatización Eficiente</h3>
+<p class="text-text-body-light text-sm leading-relaxed mb-6">
+                    Zonificación inteligente de HVAC, control por presencia y horarios para máximo confort y ahorro.
+                </p>
+<div class="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0 group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+<div class="bg-white p-10 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all group hover:-translate-y-2">
+<div class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center text-secondary mb-8 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-4">Seguridad y Accesos</h3>
+<p class="text-text-body-light text-sm leading-relaxed mb-6">
+                    Videoporteros IP, cerraduras biométricas y sistemas de alarma integrados en una sola app.
+                </p>
+<div class="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0 group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-secondary text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 grid-pattern pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5 rounded-l-full blur-3xl"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="lg:w-1/2">
+<h2 class="text-3xl md:text-5xl font-extrabold mb-8">Escenarios Inteligentes</h2>
+<p class="text-gray-300 text-lg mb-10 leading-relaxed font-light">
+                    La verdadera magia de la domótica no es controlar un dispositivo, sino orquestar tu hogar completo con un solo toque o comando de voz.
+                </p>
+<div class="space-y-6">
+<div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl flex items-center gap-6 hover:bg-white/10 transition-colors cursor-default group">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white">movie</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-1">Modo Cine</h4>
+<p class="text-gray-400 text-sm">Las luces se atenúan, las persianas bajan, el proyector se enciende y el clima se ajusta a 22°C.</p>
+</div>
+</div>
+<div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl flex items-center gap-6 hover:bg-white/10 transition-colors cursor-default group">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white">nightlight</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-1">Modo Buenas Noches</h4>
+<p class="text-gray-400 text-sm">Apagado general de luces, activación de alarma perimetral y cierre de cerraduras.</p>
+</div>
+</div>
+<div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl flex items-center gap-6 hover:bg-white/10 transition-colors cursor-default group">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white">flight_takeoff</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-1">Modo Vacaciones</h4>
+<p class="text-gray-400 text-sm">Simulación de presencia encendiendo luces aleatorias y gestión eficiente del consumo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2">
+<img alt="App interface showing scenarios on a smartphone" class="w-full max-w-md mx-auto rounded-3xl shadow-2xl border-4 border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR69zX6bHFBE-1W3_MANz_Am8eqE-HAVIZQDlgHLcDrjAIqeRtltq4-rjTHYOzz8uZfCFIaegnZTLxN7dM0EST8dRmFZiYgaOBNep61C76XT-Z9UzT3SFLPVAm-4HpzZobCkDqW3agsCuewRWy9mxUUnFaLG5vP0L_iAbgsZV2nPBWYx0maYArpk9QkQRuuu4r9s4fnFCwp4QcqwrzDDDFel50MYjYDvbA2KC6vOzDW6PZnIGas4KCm_a0RVYkVREDHvijvt8UqjAG"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white" id="gallery">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Portfolio</span>
+<h2 class="text-4xl font-extrabold text-secondary">Galería de Proyectos</h2>
+</div>
+<div class="hidden md:block">
+<a class="text-secondary font-bold hover:text-primary transition flex items-center gap-2" href="#">Ver todo <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden group">
+<img alt="Modern living room with automated blinds" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU1zqxvB3VuCDEOvjVfqTJqGl5KXVpLZ88sbzy7dX810nhzO9i2_JB8rWe8REAxPCRrOvdkZ4Z-LDq00wXTJXoFvD0aSD4F75YLphY2jfhFyY2GyBh0clWuV4Miq2Ibuv9HqtsHSbEGJ9bcpz0y6XgPEuVL5q7NIBRZXLVi6yf7AGC_kl9nY6DskQ1WXxo2YKN_BlnPrf9uOxxeI9njgU5lCZWVruOJG57LjGgJx9iwPKg4jrXbEqjGnBv8EKKxz57X4SVWpArKo0D"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-primary font-bold text-sm uppercase mb-1">Residencial</span>
+<h3 class="text-white text-2xl font-bold">Automatización Cortinas e Iluminación</h3>
+<p class="text-gray-200 text-sm mt-2">Casa Veranda</p>
+</div>
+</div>
+<div class="relative rounded-3xl overflow-hidden group">
+<img alt="Smart thermostat close up" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRdy5lRwiivqf5Lemm05sSBV0YccwiXJOIbGtsk4crLCYx5AA1KQYVK_1g3AJlKKj1Ag2C6oSIYMGsStwvETHh9-tNoubC2AlGPy8D77AgyaVpw7uowR0aZ8N_jk20iCuPvFsdAZWm3NOjWj_23BrA-PbrkhOAX0SkMSIbqqsqCp_fK1a2sng92jeEK__SLwZufowtZJzmr-hA095FbUS6KGXWwK_AdGJ6qJZGAqQeHyVVk0m35ytpArY-ztLr3H-KUJA2o9Di9X99"/>
+<div class="absolute inset-0 bg-secondary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">touch_app</span>
+</div>
+</div>
+<div class="relative rounded-3xl overflow-hidden group">
+<img alt="Server room for smart home" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR69zX6bHFBE-1W3_MANz_Am8eqE-HAVIZQDlgHLcDrjAIqeRtltq4-rjTHYOzz8uZfCFIaegnZTLxN7dM0EST8dRmFZiYgaOBNep61C76XT-Z9UzT3SFLPVAm-4HpzZobCkDqW3agsCuewRWy9mxUUnFaLG5vP0L_iAbgsZV2nPBWYx0maYArpk9QkQRuuu4r9s4fnFCwp4QcqwrzDDDFel50MYjYDvbA2KC6vOzDW6PZnIGas4KCm_a0RVYkVREDHvijvt8UqjAG"/>
+<div class="absolute inset-0 bg-secondary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">router</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-light topo-bg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-extrabold text-secondary">Beneficios Operativos</h2>
+<p class="text-text-body-light mt-4">Más que tecnología, soluciones que mejoran su calidad de vida.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-center hover:border-primary/30 transition-colors">
+<div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">savings</span>
+</div>
+<h3 class="font-bold text-secondary text-lg mb-3">Ahorro Energético</h3>
+<p class="text-sm text-text-body-light">Reducción de hasta un 30% en facturas de electricidad mediante gestión automatizada.</p>
+</div>
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-center hover:border-primary/30 transition-colors">
+<div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="font-bold text-secondary text-lg mb-3">Seguridad Total</h3>
+<p class="text-sm text-text-body-light">Sistemas integrados que reaccionan ante intrusiones, fugas de agua o incendios.</p>
+</div>
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-center hover:border-primary/30 transition-colors">
+<div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">accessibility_new</span>
+</div>
+<h3 class="font-bold text-secondary text-lg mb-3">Confort y Accesibilidad</h3>
+<p class="text-sm text-text-body-light">Espacios que se adaptan a usted, facilitando la vida a personas con movilidad reducida.</p>
+</div>
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-center hover:border-primary/30 transition-colors">
+<div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">trending_up</span>
+</div>
+<h3 class="font-bold text-secondary text-lg mb-3">Valorización</h3>
+<p class="text-sm text-text-body-light">Aumente el valor de mercado de su propiedad con infraestructura tecnológica moderna.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-gradient-to-r from-secondary to-blue-900 rounded-[3rem] p-12 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+<div class="relative z-10">
+<h2 class="text-3xl md:text-5xl font-extrabold mb-6">¿Listo para modernizar su espacio?</h2>
+<p class="text-lg text-blue-100 mb-10 max-w-2xl mx-auto">
+                    Solicite una consultoría gratuita y descubra cómo la domótica puede transformar su hogar o empresa.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="bg-primary hover:bg-white hover:text-secondary text-white font-bold py-4 px-10 rounded-xl transition-all shadow-lg transform hover:-translate-y-1" href="#">
+                        SOLICITAR ASESORÍA
+                    </a>
+<a class="bg-transparent border-2 border-white hover:bg-white hover:text-secondary text-white font-bold py-4 px-10 rounded-xl transition-all transform hover:-translate-y-1" href="#">
+                        DESCARGAR BROCHURE
+                    </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-secondary dark:bg-black py-12 mt-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">layers</span>
+<span class="font-bold text-xl tracking-tighter text-white">IGESCOL</span>
+</div>
+<p class="text-gray-400 text-sm">
+            © 2023 IGESCOL. Soluciones de Ingeniería y Domótica. Todos los derechos reservados.
+        </p>
+<div class="flex space-x-6 text-gray-400">
+<a class="hover:text-primary" href="#">Privacidad</a>
+<a class="hover:text-primary" href="#">Términos</a>
+</div>
+</div>
+</footer>
+
+</body></html>

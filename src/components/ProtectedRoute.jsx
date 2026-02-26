@@ -11,6 +11,10 @@ export default function ProtectedRoute({ children, allowedRoles }) {
         return <Navigate to="/login" state={{ from: location }} replace />;
     }
 
+    if (profile && profile.role !== 'admin' && !profile.onboarding_completed && location.pathname !== '/complete-profile') {
+        return <Navigate to="/complete-profile" replace />;
+    }
+
     if (allowedRoles && (!profile || !allowedRoles.includes(profile.role))) {
         // Redirect to their respective dashboard if they land in a wrong role path
         if (profile?.role === 'admin') return <Navigate to="/admin" replace />;

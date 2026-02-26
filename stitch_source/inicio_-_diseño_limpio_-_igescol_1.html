@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IGESCOL - Consultoría Integral en Ingeniería</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00BCD4", // Cyan
+              secondary: "#1A237E", // Navy Blue
+              "background-light": "#FFFFFF",
+              "background-dark": "#0F172A",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1E293B",
+              "text-main-light": "#1A237E",
+              "text-main-dark": "#E2E8F0",
+              "text-body-light": "#475569",
+              "text-body-dark": "#94A3B8"
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --topo-pattern: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 380c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 340c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 300c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 260c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 220c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 180c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 140c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 100c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 60c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 20c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0' stroke='%2300BCD4' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3C/svg%3E");
+        }
+        .topo-bg {
+            background-image: var(--topo-pattern);
+        }
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+        .clip-diagonal-reverse {
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        .grid-pattern {
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans transition-colors duration-300 grid-pattern">
+<div class="bg-white/80 backdrop-blur-md dark:bg-surface-dark/80 border-b border-gray-100 dark:border-gray-800 fixed w-full z-[60]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-10 text-xs sm:text-sm">
+<div class="hidden sm:flex space-x-6 text-text-body-light dark:text-text-body-dark">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-sm mr-1">phone</span>
+<span>+1 222 333-44-55</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-sm mr-1">schedule</span>
+<span>Mon-Sat 08:00-18:00</span>
+</div>
+</div>
+<div class="flex space-x-4 ml-auto text-text-main-light dark:text-text-main-dark">
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">facebook</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">smart_display</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">photo_camera</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">work</i></a>
+</div>
+</div>
+</div>
+</div>
+<nav class="bg-white/90 backdrop-blur-lg dark:bg-surface-dark/90 shadow-sm fixed top-10 w-full z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20 items-center">
+<div class="flex-shrink-0 flex items-center">
+<div class="flex items-center gap-2">
+<div class="text-primary bg-primary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl">layers</span>
+</div>
+<span class="font-bold text-2xl tracking-tighter text-text-main-light dark:text-white">IGESCOL</span>
+</div>
+</div>
+<div class="hidden md:flex space-x-10">
+<a class="text-primary font-bold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="#">Inicio</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Nosotros</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Servicios</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Proyectos</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Contacto</a>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-gray-500 hover:text-primary focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="relative pt-48 pb-32 overflow-hidden topo-bg">
+<div class="absolute right-0 top-0 w-1/2 h-full -z-10 hidden lg:block">
+<div class="absolute top-20 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-10 right-40 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="absolute top-40 right-10 w-[500px] h-[500px] border border-primary/10 rotate-12 -z-10"></div>
+<div class="absolute top-60 right-20 w-[400px] h-[400px] border border-secondary/10 -rotate-6 -z-10"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="lg:w-3/5 text-center lg:text-left">
+<div class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs mb-6 uppercase tracking-widest">Innovation &amp; Engineering</div>
+<h1 class="text-5xl md:text-7xl font-extrabold text-text-main-light dark:text-white leading-[1.1] mb-8">
+                    CONSULTORÍA <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">INTEGRAL EN</span> <br/>
+                    INGENIERÍA
+                </h1>
+<p class="text-xl text-text-body-light dark:text-gray-300 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                    Optimizamos sus proyectos de construcción con soluciones tecnológicas avanzadas y gestión de licencias experta.
+                </p>
+<div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+<a class="bg-primary hover:bg-secondary text-white font-bold py-4 px-10 rounded-xl shadow-xl shadow-primary/20 transition-all transform hover:-translate-y-1 text-center" href="#">
+                        MÁS INFORMACIÓN
+                    </a>
+<a class="bg-white border-2 border-primary text-primary font-bold py-4 px-10 rounded-xl hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1 text-center" href="#">
+                        CONTÁCTANOS
+                    </a>
+</div>
+</div>
+<div class="lg:w-2/5 relative">
+<div class="relative z-20 rounded-3xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
+<img alt="Engineering blueprint" class="w-full h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAle6GYvgdcZon18_NbyhO5Mc-ROs2cxAEC6LcemPERVMU9bx3jB9TWsQhxC7uKw_aq0W7k3misyDgF3V2TFt7j3mPDS1yz1kIcSylxFOnek6FHDhXLncGSq__a6DkEgT-FNQqnQM0uCpHtldnEYOMgVF6qQQFcuvKUhOEsFPitwlAwr6yqa3yPKE9h0sDv3mfnp_oJum16N9N4Sy8HAGCrLYDX-fcr30Ty2XLA2QOvKSkYp4kC_M4s17X_K4NHTlAlZ35HDf70jhsD"/>
+</div>
+<div class="absolute -top-10 -right-10 w-full h-full bg-primary/20 rounded-3xl -rotate-6 -z-10"></div>
+<div class="absolute -bottom-5 -left-5 w-32 h-32 bg-secondary rounded-2xl z-30 flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined text-white text-5xl">precision_manufacturing</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="py-32 bg-white topo-bg relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-extrabold text-text-main-light dark:text-white mb-6">
+                    Estos son nuestros servicios
+                </h2>
+<div class="w-24 h-2 bg-primary rounded-full"></div>
+</div>
+<p class="text-text-body-light dark:text-gray-400 font-medium">Elevando estándares técnicos en cada obra.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white dark:bg-surface-dark rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
+<div class="relative h-64 overflow-hidden clip-diagonal">
+<img alt="Modern building facade" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu9N9RNkTMJ8gkcVD6t0jvSkXwOR0WCuIv0RCDYxOJg6IzLK5KoVdlP9Q6USJH2ndE6IcQsnJinXJadjsxKtSZ1K-367oMRZP1MkTG3OQlPZOU-kpKzFeJ-mH0l-_1qFWxM8ZMUXV4KttlBrk1k-HfaoukGNN-0vAYc3EUt7VA9bMm0dxZV8F2FzH7rJtWhVhStwcuai5kPYC5mIhnrYpaOOF3avRIPjxM1d--iZfnc-lTFLfHHsIP86XDHH727GmT68m81sL5K8X9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-10">
+<h3 class="text-2xl font-extrabold text-text-main-light dark:text-white mb-4">Licencias de Construcción</h3>
+<p class="text-text-body-light dark:text-gray-400 mb-8 leading-relaxed">
+                        Gestión integral de licencias de construcción, trámites y permisos para asegurar el cumplimiento normativo.
+                    </p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary text-white text-xs font-bold py-3 px-6 rounded-lg hover:shadow-lg transition">SABER MÁS</button>
+<button class="bg-transparent border border-primary/30 text-primary text-xs font-bold py-3 px-6 rounded-lg hover:bg-primary/5 transition">COTIZAR</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
+<div class="relative h-64 overflow-hidden clip-diagonal-reverse">
+<img alt="Highway infrastructure" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSs18x3QPLS_d3576w9xgkqqRsgHAx-W5hnU7SvefsGtYjW_3T1o5zOFsttKagCJeSVkZCqEE_VmIBsF0QOO7VfmJ2g2WL-Y_SMH2SBaMQQi8lWg2KNodZIdKdM0pyDm2LlekYDqiY_j4yM0Uhwu4q1gMIsTiZMmCjuc71V1yHfKReGsiEXfiEuOPTmLSkQ7VRQ-223vTwzWC0MvBPBLcdGadkKvGaZv1YLVguuMJe6x05-Z2LwfgbmofdBRTvToZaakW5Wn-14s5N"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-10">
+<h3 class="text-2xl font-extrabold text-text-main-light dark:text-white mb-4">Infraestructura Vial</h3>
+<p class="text-text-body-light dark:text-gray-400 mb-8 leading-relaxed">
+                        Diseño y planificación de infraestructura vial para optimizar la conectividad y el desarrollo urbano sostenible.
+                    </p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary text-white text-xs font-bold py-3 px-6 rounded-lg hover:shadow-lg transition">SABER MÁS</button>
+<button class="bg-transparent border border-primary/30 text-primary text-xs font-bold py-3 px-6 rounded-lg hover:bg-primary/5 transition">COTIZAR</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
+<div class="relative h-64 overflow-hidden clip-diagonal">
+<img alt="Smart home living room" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRdy5lRwiivqf5Lemm05sSBV0YccwiXJOIbGtsk4crLCYx5AA1KQYVK_1g3AJlKKj1Ag2C6oSIYMGsStwvETHh9-tNoubC2AlGPy8D77AgyaVpw7uowR0aZ8N_jk20iCuPvFsdAZWm3NOjWj_23BrA-PbrkhOAX0SkMSIbqqsqCp_fK1a2sng92jeEK__SLwZufowtZJzmr-hA095FbUS6KGXWwK_AdGJ6qJZGAqQeHyVVk0m35ytpArY-ztLr3H-KUJA2o9Di9X99"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-10">
+<h3 class="text-2xl font-extrabold text-text-main-light dark:text-white mb-4">Domótica Residencial</h3>
+<p class="text-text-body-light dark:text-gray-400 mb-8 leading-relaxed">
+                        Sistemas de automatización inteligente para el hogar, mejorando el confort y la eficiencia energética.
+                    </p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary text-white text-xs font-bold py-3 px-6 rounded-lg hover:shadow-lg transition">SABER MÁS</button>
+<button class="bg-transparent border border-primary/30 text-primary text-xs font-bold py-3 px-6 rounded-lg hover:bg-primary/5 transition">COTIZAR</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
+<div class="relative h-64 overflow-hidden clip-diagonal-reverse">
+<img alt="Structural engineering design" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_v7gpM-ptf5ZVypXKi0czzsE_9cGfedcckqAkGf4LCiDgDuwT9ska7dRvbeE7nh9XBxzGQScF7bT8t_LpaftNfFXS_Z36GZiLaQMgsVyrfp-BgMubZt5W_OnNOoo110H6X_9kd8sb7E4RtvRgXwNe_N4PMLEwfF0RTofQNqAVEcUuBE7pzSFOmGGxCOvmqwreQbdMFpnX7ztVqepvQtKOh2V319J5J53ExtxHoi6e1ILW0rQup_JeSE0awQJfkbGTB8WyFkwtDTUi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-10">
+<h3 class="text-2xl font-extrabold text-text-main-light dark:text-white mb-4">Diseño de Estructuras</h3>
+<p class="text-text-body-light dark:text-gray-400 mb-8 leading-relaxed">
+                        Cálculo y diseño estructural avanzado utilizando metodología BIM para garantizar solidez y seguridad.
+                    </p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary text-white text-xs font-bold py-3 px-6 rounded-lg hover:shadow-lg transition">SABER MÁS</button>
+<button class="bg-transparent border border-primary/30 text-primary text-xs font-bold py-3 px-6 rounded-lg hover:bg-primary/5 transition">COTIZAR</button>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section class="py-32 bg-secondary text-white overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 grid-pattern pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-24">
+<h2 class="text-4xl md:text-5xl font-extrabold mb-6">Nuestro proceso de trabajo</h2>
+<p class="text-primary/80 uppercase tracking-widest font-bold">Metodología paso a paso</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="relative group">
+<div class="text-[120px] font-black text-white/5 absolute -top-20 left-0">01</div>
+<div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-8 rotate-3 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl text-white">search</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Diagnóstico</h3>
+<p class="text-gray-300 leading-relaxed font-light">
+                    Análisis detallado de los requerimientos y condiciones iniciales del proyecto.
+                </p>
+</div>
+<div class="relative group lg:mt-12">
+<div class="text-[120px] font-black text-white/5 absolute -top-20 left-0">02</div>
+<div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-8 -rotate-3 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl text-white">edit_note</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Propuesta</h3>
+<p class="text-gray-300 leading-relaxed font-light">
+                    Diseño de la solución técnica y económica adaptada a las necesidades.
+                </p>
+</div>
+<div class="relative group lg:mt-24">
+<div class="text-[120px] font-black text-white/5 absolute -top-20 left-0">03</div>
+<div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-8 rotate-6 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl text-white">settings</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Ejecución</h3>
+<p class="text-gray-300 leading-relaxed font-light">
+                    Implementación rigurosa del plan establecido con altos estándares.
+                </p>
+</div>
+<div class="relative group lg:mt-36">
+<div class="text-[120px] font-black text-white/5 absolute -top-20 left-0">04</div>
+<div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-8 -rotate-6 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl text-white">inventory_2</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Entrega</h3>
+<p class="text-gray-300 leading-relaxed font-light">
+                    Finalización exitosa y entrega formal del proyecto al cliente.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white topo-bg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-12 items-center gap-16">
+<div class="lg:col-span-6 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<img alt="Engineer team" class="rounded-3xl w-full h-80 object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_v7gpM-ptf5ZVypXKi0czzsE_9cGfedcckqAkGf4LCiDgDuwT9ska7dRvbeE7nh9XBxzGQScF7bT8t_LpaftNfFXS_Z36GZiLaQMgsVyrfp-BgMubZt5W_OnNOoo110H6X_9kd8sb7E4RtvRgXwNe_N4PMLEwfF0RTofQNqAVEcUuBE7pzSFOmGGxCOvmqwreQbdMFpnX7ztVqepvQtKOh2V319J5J53ExtxHoi6e1ILW0rQup_JeSE0awQJfkbGTB8WyFkwtDTUi"/>
+<div class="bg-primary p-8 rounded-3xl text-white shadow-xl">
+<p class="text-4xl font-black mb-2">15+</p>
+<p class="text-xs font-bold uppercase tracking-widest">Años de Excelencia</p>
+</div>
+</div>
+<div class="pt-12 space-y-4">
+<div class="bg-secondary p-8 rounded-3xl text-white shadow-xl">
+<span class="material-symbols-outlined text-4xl">verified</span>
+</div>
+<img alt="Engineering plan" class="rounded-3xl w-full h-80 object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp6p9OUxuBloFa8ilPCOYL5t3HwSecAAzn0ZHnvmMUlIPaYpLe_ilWiv1qCmYMJluysKsEGL823hXXrk6pCdJG5AZMRPRusbQ_-euEkENsWlv2SDppYrGzx3dcMuZC9bubaGFbsBWQ5XQ5Y5jwI0JSZpFqfC6txYvO3yedlmXxQkHiefUDhxyXwrnTV1udSJPg6VMS5qGqZbkiMuoXvRV3W-UGtV16uxjLO3tDfWCmmFsmw7mbieusZpI18w59ljpRwuntWHxsXTi5"/>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6">
+<div class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs mb-6 uppercase tracking-widest">About Us</div>
+<h2 class="text-4xl md:text-5xl font-extrabold text-text-main-light dark:text-white mb-8">
+                    Quiénes Somos
+                </h2>
+<p class="text-xl text-text-body-light dark:text-gray-300 mb-8 leading-relaxed font-medium">
+                    Somos <span class="text-primary font-extrabold">IGESCOL</span>, una empresa de consultoría en ingeniería orientada a brindar soluciones técnicas confiables, eficientes y ajustadas a la normativa vigente.
+                </p>
+<p class="text-lg text-text-body-light dark:text-gray-400 mb-12 leading-relaxed font-light">
+                    Contamos con un equipo interdisciplinario altamente calificado comprometido con la excelencia y la innovación en cada proyecto que emprendemos.
+                </p>
+<a class="inline-flex items-center justify-center bg-secondary hover:bg-primary text-white font-bold py-4 px-10 rounded-2xl shadow-xl transition-all group" href="#">
+                    CONÓCENOS
+                    <span class="material-symbols-outlined ml-3 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-gray-50/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-extrabold text-text-main-light mb-6">Por Qué Elegirnos</h2>
+<p class="text-text-body-light max-w-xl mx-auto font-medium">Nuestra experiencia y compromiso garantizan el éxito de su proyecto.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all group hover:-translate-y-2">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">plumbing</span>
+</div>
+<h3 class="text-xl font-bold text-text-main-light mb-4">Diagnóstico Técnico</h3>
+<p class="text-text-body-light text-sm leading-relaxed mb-8">Evaluación precisa del estado actual para identificar necesidades reales.</p>
+<a class="text-primary font-bold text-xs flex items-center gap-2 group-hover:gap-4 transition-all" href="#">SABER MÁS <span class="material-symbols-outlined text-base">east</span></a>
+</div>
+<div class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all group hover:-translate-y-2 lg:mt-8">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">assignment</span>
+</div>
+<h3 class="text-xl font-bold text-text-main-light mb-4">Propuesta Estructurada</h3>
+<p class="text-text-body-light text-sm leading-relaxed mb-8">Planificación detallada optimizando recursos y tiempos de ejecución.</p>
+<a class="text-primary font-bold text-xs flex items-center gap-2 group-hover:gap-4 transition-all" href="#">SABER MÁS <span class="material-symbols-outlined text-base">east</span></a>
+</div>
+<div class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all group hover:-translate-y-2">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">build_circle</span>
+</div>
+<h3 class="text-xl font-bold text-text-main-light mb-4">Soluciones a Medida</h3>
+<p class="text-text-body-light text-sm leading-relaxed mb-8">Adaptamos cada proyecto a los requerimientos específicos del cliente.</p>
+<a class="text-primary font-bold text-xs flex items-center gap-2 group-hover:gap-4 transition-all" href="#">SABER MÁS <span class="material-symbols-outlined text-base">east</span></a>
+</div>
+<div class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all group hover:-translate-y-2 lg:mt-8">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+</div>
+<h3 class="text-xl font-bold text-text-main-light mb-4">Acompañamiento</h3>
+<p class="text-text-body-light text-sm leading-relaxed mb-8">Asesoría profesional continua durante todas las etapas del proyecto.</p>
+<a class="text-primary font-bold text-xs flex items-center gap-2 group-hover:gap-4 transition-all" href="#">SABER MÁS <span class="material-symbols-outlined text-base">east</span></a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white topo-bg relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<div class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs mb-6 uppercase tracking-widest">Portafolio</div>
+<h2 class="text-4xl md:text-6xl font-black text-secondary tracking-tighter mb-6">Nuestros Proyectos</h2>
+<p class="text-text-body-light max-w-2xl mx-auto text-lg">Soluciones de ingeniería de vanguardia aplicadas en proyectos de alta complejidad.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Carretera de Montaña" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZf_3qTI-tUOmB7c42UvQ_kO4ID2lWPwE3yCLZI6oluHGi7T2z4mnlaRKRapSiTqIJ-fW-7n2TKYpUjccu3RLqcPleraFOHI_L7MEvPArK6XDqc9FTZKU4kiiXipc8wsQU3Q3SjgRUkhbWmMdq63WBxiXgDcnuGXceMb49q8nurW0xKONCUzovV78c8I6EkA8vpxFju5SPL2DtbGlZ4EpYrFjTf14sxShurxllsxYLRyNrJewQ7RxzFu90wCbO8NIUboW8LiVKS0dC"/>
+<div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Infraestructura Vial</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Conexión Vial Región Sur</h3>
+<p class="text-text-body-light text-sm mb-6 line-clamp-3 flex-grow">Desarrollo y modernización de corredores viales para mejorar la conectividad regional.</p>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link" href="#">
+                        Ver más <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Edificio Residencial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTMZZKZ888e0JdXK4ya0OBHK91PbwwmBS75ScynydsVuCzN9f5_f0bezp6LnsIGl5LWPDSvzXLYkdmJDjA4GMD9CR7hqNLNGGu0LICTcuoTNW3ne-6Cj8KZvSRFkOVy0JOE0qvVtasCc8Suichy2Vo2Zpw0j6XuHfL2HLC2wy9ocSavG7NmCBYwH2K8y2ZPCXjEEPrkBjXk7MmI-4uY8SWRCX4Fbqqpd6RKj45i6Ty1ya1A19yKr-Nx1hYsTdtzYLiEVejE--upX5n"/>
+<div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Licencias</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Altos del Norte</h3>
+<p class="text-text-body-light text-sm mb-6 line-clamp-3 flex-grow">Gestión integral de licencias y permisos para complejo residencial de alta densidad.</p>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link" href="#">
+                        Ver más <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Smart Living Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU1zqxvB3VuCDEOvjVfqTJqGl5KXVpLZ88sbzy7dX810nhzO9i2_JB8rWe8REAxPCRrOvdkZ4Z-LDq00wXTJXoFvD0aSD4F75YLphY2jfhFyY2GyBh0clWuV4Miq2Ibuv9HqtsHSbEGJ9bcpz0y6XgPEuVL5q7NIBRZXLVi6yf7AGC_kl9nY6DskQ1WXxo2YKN_BlnPrf9uOxxeI9njgU5lCZWVruOJG57LjGgJx9iwPKg4jrXbEqjGnBv8EKKxz57X4SVWpArKo0D"/>
+<div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Domótica</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Smart Home Systems</h3>
+<p class="text-text-body-light text-sm mb-6 line-clamp-3 flex-grow">Implementación de sistemas inteligentes de automatización para viviendas modernas.</p>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link" href="#">
+                        Ver más <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Autopista Urbana" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuSh4v_IrW-eOTbH590fDLQCQKAraXFYA3Oo8twwIyu2J0jd2WaU0HS9lR49kmK1czkv61M6p6-8hjRFlccxnU6KDsKYeg0HMIA6126Iq6sVL5Cp0PIRvVBfjcyDZa-aN2JjH4uxx5AYdk8AjxNLIXyr3Fs3Nb4d-DUa-tb1Nok80r_vTFjOSV9r6fCu1-HgG76Vejm0Fa51AOEazsI6tfOGwR7r8ElijRWMs4XmmjS67sH35cHB3HZbKmb-1IZeLFT8lWJ8kz82wI"/>
+<div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Infraestructura</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Intersección 80</h3>
+<p class="text-text-body-light text-sm mb-6 line-clamp-3 flex-grow">Diseño y optimización de flujos vehiculares en intersecciones urbanas críticas.</p>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link" href="#">
+                        Ver más <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Complejo Comercial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp6p9OUxuBloFa8ilPCOYL5t3HwSecAAzn0ZHnvmMUlIPaYpLe_ilWiv1qCmYMJluysKsEGL823hXXrk6pCdJG5AZMRPRusbQ_-euEkENsWlv2SDppYrGzx3dcMuZC9bubaGFbsBWQ5XQ5Y5jwI0JSZpFqfC6txYvO3yedlmXxQkHiefUDhxyXwrnTV1udSJPg6VMS5qGqZbkiMuoXvRV3W-UGtV16uxjLO3tDfWCmmFsmw7mbieusZpI18w59ljpRwuntWHxsXTi5"/>
+<div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Comercial</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Centro Comercial Plaza</h3>
+<p class="text-text-body-light text-sm mb-6 line-clamp-3 flex-grow">Consultoría integral para el desarrollo de grandes superficies comerciales.</p>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link" href="#">
+                        Ver más <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
+<div class="relative h-64 overflow-hidden">
+<img alt="Security Panel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR69zX6bHFBE-1W3_MANz_Am8eqE-HAVIZQDlgHLcDrjAIqeRtltq4-rjTHYOzz8uZfCFIaegnZTLxN7dM0EST8dRmFZiYgaOBNep61C76XT-Z9UzT3SFLPVAm-4HpzZobCkDqW3agsCuewRWy9mxUUnFaLG5vP0L_iAbgsZV2nPBWYx0maYArpk9QkQRuuu4r9s4fnFCwp4QcqwrzDDDFel50MYjYDvbA2KC6vOzDW6PZnIGas4KCm_a0RVYkVREDHvijvt8UqjAG"/>
+<div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-300"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Seguridad</span>
+</div>
+<h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors">Seguridad Avanzada</h3>
+<p class="text-text-body-light text-sm mb-6 line-clamp-3 flex-grow">Implementación de protocolos y sistemas de seguridad electrónica de última generación.</p>
+<a class="inline-flex items-center text-primary font-bold text-sm hover:underline mt-auto group/link" href="#">
+                        Ver más <span class="material-symbols-outlined text-lg ml-1 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<a class="inline-flex items-center justify-center bg-secondary hover:bg-primary text-white font-bold py-4 px-10 rounded-2xl shadow-xl transition-all transform hover:-translate-y-1" href="#">
+                VER TODOS LOS PROYECTOS
+                <span class="material-symbols-outlined ml-2">grid_view</span>
+</a>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white topo-bg" id="tecnologia-sostenibilidad">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="lg:w-1/2">
+<div class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs mb-6 uppercase tracking-widest">Innovación Continua</div>
+<h2 class="text-4xl md:text-5xl font-extrabold text-text-main-light mb-8">Tecnología y Sostenibilidad</h2>
+<p class="text-xl text-text-body-light mb-8 leading-relaxed">
+                    Integramos las herramientas más avanzadas de ingeniería con un firme compromiso ambiental para crear infraestructuras que perduren.
+                </p>
+<div class="space-y-6">
+<div class="flex items-start gap-5">
+<div class="flex-shrink-0 w-12 h-12 bg-secondary/5 rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main-light text-lg mb-1">Coordinación BIM Integral</h4>
+<p class="text-text-body-light text-sm">Detección temprana de interferencias y optimización de flujos de trabajo constructivos.</p>
+</div>
+</div>
+<div class="flex items-start gap-5">
+<div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main-light text-lg mb-1">Optimización Técnica Sostenible</h4>
+<p class="text-text-body-light text-sm">Reducción de huella de carbono mediante el uso eficiente de materiales y procesos energéticos.</p>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<a class="bg-secondary hover:bg-primary text-white font-bold py-4 px-10 rounded-2xl shadow-xl transition-all inline-block" href="#">VER NUESTRO ENFOQUE</a>
+</div>
+</div>
+<div class="lg:w-1/2 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="h-64 bg-secondary/10 rounded-3xl flex items-center justify-center p-8">
+<span class="material-symbols-outlined text-secondary text-7xl opacity-50">model_training</span>
+</div>
+<div class="h-48 bg-primary rounded-3xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-6xl">developer_board</span>
+</div>
+</div>
+<div class="space-y-4 pt-12">
+<div class="h-48 bg-gray-900 rounded-3xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl">query_stats</span>
+</div>
+<div class="h-64 bg-gray-100 rounded-3xl flex items-center justify-center p-8 border border-gray-200">
+<span class="material-symbols-outlined text-secondary text-7xl opacity-50">architecture</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white topo-bg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-gray-50 rounded-[4rem] overflow-hidden shadow-sm border border-gray-100">
+<div class="grid lg:grid-cols-2">
+<div class="p-16 lg:p-24 bg-white">
+<h2 class="text-4xl md:text-5xl font-extrabold text-text-main-light mb-10">Contáctanos</h2>
+<p class="text-text-body-light mb-12 text-lg">Estamos listos para escuchar su proyecto y ofrecer soluciones integrales.</p>
+<div class="space-y-8">
+<div class="flex items-center group">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mr-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">phone</span>
+</div>
+<span class="text-text-main-light font-bold text-xl">+1 222 333-44-55</span>
+</div>
+<div class="flex items-center group">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mr-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">email</span>
+</div>
+<span class="text-text-main-light font-bold text-xl">info@igescol.corp</span>
+</div>
+<div class="flex items-center group">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mr-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<span class="text-text-main-light font-bold text-xl">Av. Principal 123, Oficina 404</span>
+</div>
+</div>
+</div>
+<div class="p-16 lg:p-24 bg-gray-50 flex items-center">
+<form class="w-full space-y-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<input class="w-full px-6 py-4 rounded-2xl border-transparent bg-white shadow-sm focus:ring-2 focus:ring-primary outline-none transition" placeholder="Nombre" type="text"/>
+<input class="w-full px-6 py-4 rounded-2xl border-transparent bg-white shadow-sm focus:ring-2 focus:ring-primary outline-none transition" placeholder="Asunto" type="text"/>
+</div>
+<input class="w-full px-6 py-4 rounded-2xl border-transparent bg-white shadow-sm focus:ring-2 focus:ring-primary outline-none transition" placeholder="Email *" required="" type="email"/>
+<textarea class="w-full px-6 py-4 rounded-2xl border-transparent bg-white shadow-sm focus:ring-2 focus:ring-primary outline-none transition" placeholder="Mensaje" rows="5"></textarea>
+<button class="w-full bg-secondary hover:bg-primary text-white font-extrabold py-5 rounded-2xl shadow-xl shadow-secondary/20 transition-all transform hover:-translate-y-1 uppercase tracking-widest" type="submit">
+                            ENVIAR MENSAJE
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-secondary dark:bg-black py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">layers</span>
+<span class="font-bold text-xl tracking-tighter text-white">IGESCOL</span>
+</div>
+<p class="text-gray-400 text-sm">
+            © 2023 IGESCOL. Todos los derechos reservados.
+        </p>
+<div class="flex space-x-6 text-gray-400">
+<a class="hover:text-primary" href="#">Privacidad</a>
+<a class="hover:text-primary" href="#">Términos</a>
+</div>
+</div>
+</footer>
+
+</body></html>

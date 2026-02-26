@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Proyectos: Licencias - IGESCOL</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00BCD4", // Cyan
+              secondary: "#1A237E", // Navy Blue
+              "background-light": "#FFFFFF",
+              "background-dark": "#0F172A",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1E293B",
+              "text-main-light": "#1A237E",
+              "text-main-dark": "#E2E8F0",
+              "text-body-light": "#475569",
+              "text-body-dark": "#94A3B8"
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --topo-pattern: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 380c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20-5 30 0M0 340c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 300c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 260c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 220c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 180c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 140c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 100c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0M0 60c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20-5 30 0M0 20c10-5 20-5 30 0s20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0 20 5 30 0 20-5 30 0' stroke='%2300BCD4' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3C/svg%3E");
+        }
+        .topo-bg {
+            background-image: var(--topo-pattern);
+        }
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+        .clip-diagonal-reverse {
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        .grid-pattern {
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans transition-colors duration-300 grid-pattern">
+<div class="bg-white/80 backdrop-blur-md dark:bg-surface-dark/80 border-b border-gray-100 dark:border-gray-800 fixed w-full z-[60]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-10 text-xs sm:text-sm">
+<div class="hidden sm:flex space-x-6 text-text-body-light dark:text-text-body-dark">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-sm mr-1">phone</span>
+<span>+1 222 333-44-55</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-sm mr-1">schedule</span>
+<span>Mon-Sat 08:00-18:00</span>
+</div>
+</div>
+<div class="flex space-x-4 ml-auto text-text-main-light dark:text-text-main-dark">
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">facebook</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">smart_display</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">photo_camera</i></a>
+<a class="hover:text-primary transition-colors" href="#"><i class="material-symbols-outlined text-base">work</i></a>
+</div>
+</div>
+</div>
+</div>
+<nav class="bg-white/90 backdrop-blur-lg dark:bg-surface-dark/90 shadow-sm fixed top-10 w-full z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20 items-center">
+<div class="flex-shrink-0 flex items-center">
+<div class="flex items-center gap-2">
+<div class="text-primary bg-primary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl">layers</span>
+</div>
+<span class="font-bold text-2xl tracking-tighter text-text-main-light dark:text-white">IGESCOL</span>
+</div>
+</div>
+<div class="hidden md:flex space-x-10">
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Inicio</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Nosotros</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Servicios</a>
+<a class="text-primary font-bold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="#">Proyectos</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold transition" href="#">Contacto</a>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-gray-500 hover:text-primary focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="relative pt-48 pb-32 overflow-hidden bg-surface-dark">
+<div class="absolute inset-0 z-0">
+<img alt="Modern architectural background" class="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTMZZKZ888e0JdXK4ya0OBHK91PbwwmBS75ScynydsVuCzN9f5_f0bezp6LnsIGl5LWPDSvzXLYkdmJDjA4GMD9CR7hqNLNGGu0LICTcuoTNW3ne-6Cj8KZvSRFkOVy0JOE0qvVtasCc8Suichy2Vo2Zpw0j6XuHfL2HLC2wy9ocSavG7NmCBYwH2K8y2ZPCXjEEPrkBjXk7MmI-4uY8SWRCX4Fbqqpd6RKj45i6Ty1ya1A19yKr-Nx1hYsTdtzYLiEVejE--upX5n"/>
+<div class="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary/60"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary text-white font-bold text-xs mb-6 uppercase tracking-widest shadow-lg">Gestión de Proyectos</span>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-8">
+            Gestión de Licencias <br/>
+<span class="text-primary">de Construcción</span>
+</h1>
+<p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
+            Garantizamos el cumplimiento normativo urbanístico mediante procesos técnicos rigurosos, optimizando la viabilidad y legalidad de sus desarrollos inmobiliarios.
+        </p>
+</div>
+</header>
+<section class="py-24 bg-gray-50/50 topo-bg relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+<div class="text-left">
+<h2 class="text-3xl font-extrabold text-secondary">Nuestros Proyectos</h2>
+<p class="text-gray-500 mt-2">Explora nuestro portafolio de gestión y desarrollo.</p>
+</div>
+<div class="flex flex-wrap gap-2 bg-white p-2 rounded-xl shadow-sm border border-gray-100">
+<button class="px-6 py-2.5 rounded-lg bg-secondary text-white font-semibold text-sm shadow-md transition-all">Todos</button>
+<button class="px-6 py-2.5 rounded-lg hover:bg-gray-100 text-gray-600 font-semibold text-sm transition-all">Urbano</button>
+<button class="px-6 py-2.5 rounded-lg hover:bg-gray-100 text-gray-600 font-semibold text-sm transition-all">Rural</button>
+<button class="px-6 py-2.5 rounded-lg hover:bg-gray-100 text-gray-600 font-semibold text-sm transition-all">Comercial</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Proyecto Urbano" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZf_3qTI-tUOmB7c42UvQ_kO4ID2lWPwE3yCLZI6oluHGi7T2z4mnlaRKRapSiTqIJ-fW-7n2TKYpUjccu3RLqcPleraFOHI_L7MEvPArK6XDqc9FTZKU4kiiXipc8wsQU3Q3SjgRUkhbWmMdq63WBxiXgDcnuGXceMb49q8nurW0xKONCUzovV78c8I6EkA8vpxFju5SPL2DtbGlZ4EpYrFjTf14sxShurxllsxYLRyNrJewQ7RxzFu90wCbO8NIUboW8LiVKS0dC"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wider shadow-sm">
+                        Infraestructura Vial
+                    </div>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">Conexión Vial Sur</h3>
+<div class="space-y-3 mt-2 mb-6">
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">location_on</span>
+<span>Antioquia, COL</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">square_foot</span>
+<span>12,500 m² intervenidos</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">calendar_month</span>
+<span>2023</span>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+<span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded">Finalizado</span>
+<a class="text-secondary font-bold text-sm hover:text-primary transition-colors flex items-center gap-1" href="#">
+                            Ver más <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Proyecto Residencial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTMZZKZ888e0JdXK4ya0OBHK91PbwwmBS75ScynydsVuCzN9f5_f0bezp6LnsIGl5LWPDSvzXLYkdmJDjA4GMD9CR7hqNLNGGu0LICTcuoTNW3ne-6Cj8KZvSRFkOVy0JOE0qvVtasCc8Suichy2Vo2Zpw0j6XuHfL2HLC2wy9ocSavG7NmCBYwH2K8y2ZPCXjEEPrkBjXk7MmI-4uY8SWRCX4Fbqqpd6RKj45i6Ty1ya1A19yKr-Nx1hYsTdtzYLiEVejE--upX5n"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wider shadow-sm">
+                        Residencial
+                    </div>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">Torres del Parque</h3>
+<div class="space-y-3 mt-2 mb-6">
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">location_on</span>
+<span>Bogotá, COL</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">square_foot</span>
+<span>45,000 m² construidos</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">calendar_month</span>
+<span>2022</span>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+<span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">En ejecución</span>
+<a class="text-secondary font-bold text-sm hover:text-primary transition-colors flex items-center gap-1" href="#">
+                            Ver más <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Proyecto Comercial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp6p9OUxuBloFa8ilPCOYL5t3HwSecAAzn0ZHnvmMUlIPaYpLe_ilWiv1qCmYMJluysKsEGL823hXXrk6pCdJG5AZMRPRusbQ_-euEkENsWlv2SDppYrGzx3dcMuZC9bubaGFbsBWQ5XQ5Y5jwI0JSZpFqfC6txYvO3yedlmXxQkHiefUDhxyXwrnTV1udSJPg6VMS5qGqZbkiMuoXvRV3W-UGtV16uxjLO3tDfWCmmFsmw7mbieusZpI18w59ljpRwuntWHxsXTi5"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wider shadow-sm">
+                        Comercial
+                    </div>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">Plaza Central Mall</h3>
+<div class="space-y-3 mt-2 mb-6">
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">location_on</span>
+<span>Medellín, COL</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">square_foot</span>
+<span>32,000 m² licenciados</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">calendar_month</span>
+<span>2023</span>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+<span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded">Finalizado</span>
+<a class="text-secondary font-bold text-sm hover:text-primary transition-colors flex items-center gap-1" href="#">
+                            Ver más <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Proyecto Institucional" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuSh4v_IrW-eOTbH590fDLQCQKAraXFYA3Oo8twwIyu2J0jd2WaU0HS9lR49kmK1czkv61M6p6-8hjRFlccxnU6KDsKYeg0HMIA6126Iq6sVL5Cp0PIRvVBfjcyDZa-aN2JjH4uxx5AYdk8AjxNLIXyr3Fs3Nb4d-DUa-tb1Nok80r_vTFjOSV9r6fCu1-HgG76Vejm0Fa51AOEazsI6tfOGwR7r8ElijRWMs4XmmjS67sH35cHB3HZbKmb-1IZeLFT8lWJ8kz82wI"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wider shadow-sm">
+                        Urbano
+                    </div>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">Intersección Norte</h3>
+<div class="space-y-3 mt-2 mb-6">
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">location_on</span>
+<span>Cali, COL</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">square_foot</span>
+<span>8,000 m² vía pública</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">calendar_month</span>
+<span>2021</span>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+<span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded">Entregado</span>
+<a class="text-secondary font-bold text-sm hover:text-primary transition-colors flex items-center gap-1" href="#">
+                            Ver más <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Domotica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU1zqxvB3VuCDEOvjVfqTJqGl5KXVpLZ88sbzy7dX810nhzO9i2_JB8rWe8REAxPCRrOvdkZ4Z-LDq00wXTJXoFvD0aSD4F75YLphY2jfhFyY2GyBh0clWuV4Miq2Ibuv9HqtsHSbEGJ9bcpz0y6XgPEuVL5q7NIBRZXLVi6yf7AGC_kl9nY6DskQ1WXxo2YKN_BlnPrf9uOxxeI9njgU5lCZWVruOJG57LjGgJx9iwPKg4jrXbEqjGnBv8EKKxz57X4SVWpArKo0D"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wider shadow-sm">
+                        Domótica
+                    </div>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">Smart Living 2024</h3>
+<div class="space-y-3 mt-2 mb-6">
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">location_on</span>
+<span>Cartagena, COL</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">square_foot</span>
+<span>500 m² automatizados</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">calendar_month</span>
+<span>2024</span>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+<span class="text-xs font-semibold text-orange-600 bg-orange-50 px-2 py-1 rounded">En diseño</span>
+<a class="text-secondary font-bold text-sm hover:text-primary transition-colors flex items-center gap-1" href="#">
+                            Ver más <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Seguridad" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR69zX6bHFBE-1W3_MANz_Am8eqE-HAVIZQDlgHLcDrjAIqeRtltq4-rjTHYOzz8uZfCFIaegnZTLxN7dM0EST8dRmFZiYgaOBNep61C76XT-Z9UzT3SFLPVAm-4HpzZobCkDqW3agsCuewRWy9mxUUnFaLG5vP0L_iAbgsZV2nPBWYx0maYArpk9QkQRuuu4r9s4fnFCwp4QcqwrzDDDFel50MYjYDvbA2KC6vOzDW6PZnIGas4KCm_a0RVYkVREDHvijvt8UqjAG"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-md uppercase tracking-wider shadow-sm">
+                        Seguridad
+                    </div>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">Sistema CCTV Corp</h3>
+<div class="space-y-3 mt-2 mb-6">
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">location_on</span>
+<span>Barranquilla, COL</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">square_foot</span>
+<span>3 sedes integradas</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<span class="material-symbols-outlined text-lg mr-2 text-primary">calendar_month</span>
+<span>2023</span>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+<span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded">Finalizado</span>
+<a class="text-secondary font-bold text-sm hover:text-primary transition-colors flex items-center gap-1" href="#">
+                            Ver más <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<a class="inline-flex items-center justify-center bg-white border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-bold py-4 px-10 rounded-xl shadow-lg transition-all transform hover:-translate-y-1" href="#">
+                VER TODOS LOS PROYECTOS
+                <span class="material-symbols-outlined ml-2">grid_view</span>
+</a>
+</div>
+</div>
+</section>
+<footer class="bg-secondary dark:bg-black py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">layers</span>
+<span class="font-bold text-xl tracking-tighter text-white">IGESCOL</span>
+</div>
+<p class="text-gray-400 text-sm">
+            © 2023 IGESCOL. Todos los derechos reservados.
+        </p>
+<div class="flex space-x-6 text-gray-400">
+<a class="hover:text-primary" href="#">Privacidad</a>
+<a class="hover:text-primary" href="#">Términos</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -29,9 +29,24 @@ export function useCMS() {
         }
     }, []);
 
+    const updateContent = async (sectionName, newContent) => {
+        try {
+            const { error } = await supabase
+                .from('cms_content')
+                .update({ content: newContent })
+                .eq('section_name', sectionName);
+            if (error) throw error;
+            setContent(prev => ({ ...prev, [sectionName]: newContent }));
+            return { success: true };
+        } catch (err) {
+            console.error('Error updating CMS content:', err);
+            return { success: false, error: err };
+        }
+    };
+
     useEffect(() => {
         fetchCMS();
     }, [fetchCMS]);
 
-    return { content, loading, error, refresh: fetchCMS };
+    return { content, loading, error, refresh: fetchCMS, updateContent };
 }

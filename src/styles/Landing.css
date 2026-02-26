@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary: #4089A7;
-    --primary-dark: #2C6E8F;
-    --secondary: #0B2540;
+    --primary: #0089A7;
+    --primary-dark: #005F73;
+    --secondary: #0A2540;
     --white: #FFFFFF;
-    --gray-bg: #F4F7F9;
-    --gray-text: #666666;
-    --gray-light: #999999;
-    --text-main: #333333;
+    --gray-bg: #F8FAFC;
+    --gray-text: #475569;
+    --gray-light: #94A3B8;
+    --text-main: #1E293B;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
+    --glass: rgba(255, 255, 255, 0.85);
+    --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.1);
 }
 
 * {
@@ -38,6 +40,29 @@ body {
     padding: 10px 0;
     font-size: 11px;
     border-bottom: 1px solid #eee;
+}
+
+
+/* Global Toolbar Responsiveness */
+.global-toolbar {
+    height: auto !important;
+    /* Allow height to expand */
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Multi-row support */
+    gap: 10px;
+}
+
+.global-toolbar>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.global-toolbar::-webkit-scrollbar {
+    display: none;
 }
 
 .top-bar .container {
@@ -347,10 +372,12 @@ body {
 .section-title {
     font-family: var(--font-heading);
     font-size: 2.2rem;
-    font-weight: 400;
+    font-weight: 800;
     color: var(--secondary);
     text-align: center;
     margin-bottom: 50px;
+    position: relative;
+    text-transform: uppercase;
 }
 
 .section-title span {
@@ -365,15 +392,16 @@ body {
 
 .service-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--shadow-premium);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.15);
 }
 
 .service-card-image {
@@ -489,18 +517,22 @@ body {
 }
 
 .process-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px 25px;
     text-align: center;
     position: relative;
     z-index: 1;
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
 }
 
 .process-card:hover {
-    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-10px);
+    border-color: var(--primary);
 }
 
 .process-icon {
@@ -618,23 +650,30 @@ body {
 
 /* ========== WHY US SECTION ========== */
 .why-us-section {
-    padding: 70px 0;
+    padding: 80px 0;
     background: linear-gradient(180deg, #D6EAF0 0%, #E8F4F8 100%);
+    display: flex;
+    justify-content: center;
 }
 
 .why-us-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    margin-top: 50px;
+    margin: 50px auto 0;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .why-card {
     background: var(--white);
     border-radius: 12px;
-    overflow: hidden;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s, box-shadow 0.3s;
+    height: auto;
+    /* Ensure it grows */
+    display: flex;
+    flex-direction: column;
 }
 
 .why-card:hover {
@@ -779,9 +818,10 @@ body {
 }
 
 .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
     margin-top: 40px;
 }
 
@@ -867,11 +907,15 @@ body {
 }
 
 .contact-form-side {
-    background: linear-gradient(135deg, #1a4a6e 0%, #0B2540 100%);
-    border-radius: 15px;
-    padding: 40px;
-    color: white;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 50px 40px;
+    color: #000000;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef2f6;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
 }
 
 .contact-form-side h3 {
@@ -939,34 +983,66 @@ body {
 .form-group input,
 .form-group textarea {
     padding: 14px;
-    border: none;
+    border: 1px solid #dcdcdc;
+    /* Added border to make them visible on white */
+    background-color: #ffffff;
     border-radius: 5px;
     font-size: 0.9rem;
     font-family: var(--font-body);
+    transition: border-color 0.3s;
 }
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
 
 .form-group textarea {
     resize: none;
-    height: 100px;
+    height: 120px;
+}
+
+@media (max-width: 768px) {
+    .contact-form-side {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .contact-form-side h3 {
+        font-size: 1.5rem;
+    }
+
+    .form-group.full {
+        grid-column: span 1;
+    }
+
+    .contact-grid {
+        gap: 20px !important;
+    }
 }
 
 .btn-submit {
-    background: var(--primary);
+    background: var(--secondary);
     color: white;
     padding: 16px 35px;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
     text-transform: uppercase;
-    margin-top: 20px;
+    margin-top: 30px;
     width: 100%;
-    transition: background-color 0.3s;
-    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
 }
 
 .btn-submit:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(64, 137, 167, 0.3);
 }
 
 /* ========== FOOTER ========== */
@@ -1095,6 +1171,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
     /* Override existing column layout for nav-bar */
     .nav-bar .container {
         flex-direction: row !important;
@@ -1102,6 +1179,31 @@ body {
         justify-content: space-between;
         align-items: center;
         position: relative;
+        padding: 10px 15px;
+        /* Add padding to prevent edge touching */
+    }
+
+    /* General Section Padding Mobile */
+    .hero-section,
+    .services-section,
+    .process-section,
+    .about-section,
+    .why-us-section,
+    .projects-section,
+    .contact-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     .mobile-menu-toggle {
@@ -1110,7 +1212,7 @@ body {
     }
 
     /* Button ACCESO wrapper to right */
-    .nav-bar > .container > div:last-child {
+    .nav-bar>.container>div:last-child {
         order: 2;
     }
 
@@ -1123,7 +1225,7 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         z-index: 100;
         border-top: 2px solid var(--primary);
     }
@@ -1160,11 +1262,12 @@ body {
 
     /* Adjust header phone section for mobile - hide it to save space */
     .header-phone {
-        display: none; 
+        display: none;
     }
-    
+
     .logo-section {
-        width: 100% !important; /* Center logo */
+        width: 100% !important;
+        /* Center logo */
         justify-content: center;
         margin-bottom: 10px;
         height: auto !important;
@@ -1180,9 +1283,296 @@ body {
         width: 200px !important;
         margin: 0 auto;
     }
-    
+
     @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
+
+    /* --- ADDED FIXES FOR MOBILE --- */
+
+    /* Hero Section: Use 'contain' or specific sizing to show full image width if possible, 
+       or just increase height. User said "perds more than half". 
+       'background-size: 100% auto' ensures width fits, height adjusts. */
+    .hero-section {
+        height: auto;
+        min-height: 300px;
+        /* Reduced to avoid huge empty space if image is short */
+        padding: 40px 0;
+        background-position: center top;
+        /* 'cover' is usually best, but if they want to see ALL, we might need 'contain' or '100% 100%' */
+        /* Let's try 100% auto to respect width */
+        background-size: 100% 100%;
+    }
+
+    /* Fix About Section: 1 col, logo small on top, text below */
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .about-logo {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .about-logo-icon {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        text-align: justify;
+        padding: 0 10px;
+    }
+
+    /* Fix Contact/Stats Overflow */
+    .stats-numbers {
+        display: flex;
+        /* override grid if it was grid */
+        flex-direction: column;
+        /* Stack them on mobile */
+        gap: 20px;
+    }
+
+    /* Ensure no horizontal overflow in contact section */
+    .contact-section .container {
+        padding: 0 15px;
+        /* Ensure padding so it doesn't touch edges */
+        overflow: hidden;
+        /* Prevent spill */
+    }
+
+    .contact-form-side {
+        padding: 25px 20px;
+        /* Reduces padding to give more room for content */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        /* Stack form inputs */
+    }
+
+    .why-card {
+        margin-bottom: 20px;
+        overflow: visible !important;
+        height: auto !important;
+        display: block !important;
+        /* Ensure it's not flex column with hidden overflow issues */
+        padding-bottom: 20px;
+        /* Space for button */
+    }
+
+    .why-card-content {
+        padding: 20px;
+        height: auto !important;
+    }
+}
+
+/* Global informative text alignment */
+.about-text p,
+.why-card-content p,
+.service-card p,
+.process-card p,
+.tech-card p,
+.projects-section p,
+.contact-section p.desc {
+    text-align: justify;
+}
+
+/* ========== TECHNOLOGY & SUSTAINABILITY SECTION ========== */
+.tech-sustainability-section {
+    padding: 80px 0;
+    background: #fdfdfd;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.tech-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.tool-column h4 {
+    margin-bottom: 20px;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tool-item {
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-tools-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Mobile Simulation Mode */
+.landing-page.mobile-simulation {
+    width: 375px;
+    margin: 20px auto;
+    border: 12px solid #333;
+    border-radius: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    background: white;
+}
+
+/* Force Mobile Layouts in Simulation */
+.landing-page.mobile-simulation .container {
+    padding: 0 15px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.landing-page.mobile-simulation .main-nav {
+    display: none;
+}
+
+.landing-page.mobile-simulation .mobile-menu-toggle {
+    display: block;
+}
+
+.landing-page.mobile-simulation .header-phone {
+    display: none;
+}
+
+.landing-page.mobile-simulation .logo-section {
+    width: 100% !important;
+    justify-content: center;
+    height: auto !important;
+}
+
+.landing-page.mobile-simulation .process-grid,
+.landing-page.mobile-simulation .about-content,
+.landing-page.mobile-simulation .why-us-grid,
+.landing-page.mobile-simulation .contact-grid,
+.landing-page.mobile-simulation .project-category-layout,
+.landing-page.mobile-simulation .project-grid-new,
+.landing-page.mobile-simulation .tech-grid,
+.landing-page.mobile-simulation .tools-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 20px;
+}
+
+.landing-page.mobile-simulation .about-content {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.landing-page.mobile-simulation .project-category-layout {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.landing-page.mobile-simulation .hero-section {
+    min-height: 300px;
+    padding: 40px 0;
+    background-size: cover;
+}
+
+
+/* Contact Section Fixes */
+/* Contact Section Fixes */
+.landing-page.mobile-simulation .contact-section .container {
+    padding: 0;
+}
+
+.landing-page.mobile-simulation .contact-grid {
+    display: block !important;
+}
+
+.landing-page.mobile-simulation .contact-form-side {
+    width: 100% !important;
+    padding: 25px !important;
+    margin: 0 !important;
+    max-width: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.contact-section .contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-form-side {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    background: white;
+    padding: 40px;
+}
+
+/* Why Us Section Fixes */
+.landing-page.mobile-simulation .why-us-grid {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.landing-page.mobile-simulation .why-card {
+    width: 100% !important;
+    margin-bottom: 20px;
 }

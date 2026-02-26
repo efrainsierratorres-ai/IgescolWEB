@@ -51,7 +51,12 @@ export const AuthProvider = ({ children }) => {
         profile,
         loading,
         signIn: (data) => supabase.auth.signInWithPassword(data),
+        signUp: (data) => supabase.auth.signUp(data),
         signOut: () => supabase.auth.signOut(),
+        refreshProfile: () => user && fetchProfile(user.id),
+        resetPassword: (email) => supabase.auth.resetPasswordForEmail(email, {
+            redirectTo: `${window.location.origin}/login`,
+        }),
     };
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

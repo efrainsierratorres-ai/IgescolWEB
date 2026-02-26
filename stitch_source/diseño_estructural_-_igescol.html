@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diseño Estructural | IGESCOL - Ingeniería de Precisión</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#1978e5", "background-light": "#f6f7f8", "background-dark": "#111821"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .blueprint-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(236, 91, 19, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<!-- Header / Nav -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-3xl">architecture</span>
+</div>
+<span class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white">IGESCOL</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Servicios</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Proyectos</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Nosotros</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Contacto</a>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary/20">
+                        Solicitar Cotización
+                    </button>
+</nav>
+</div>
+</div>
+</header>
+<main class="blueprint-bg">
+<!-- Breadcrumb -->
+<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Inicio</a></li>
+<li class="material-symbols-outlined text-xs">chevron_right</li>
+<li><a class="hover:text-primary transition-colors" href="#">Servicios</a></li>
+<li class="material-symbols-outlined text-xs">chevron_right</li>
+<li class="text-primary font-semibold">Diseño Estructural</li>
+</ol>
+</nav>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
+<div class="relative overflow-hidden rounded-3xl bg-slate-900 aspect-[16/9] md:aspect-[21/9] flex items-center shadow-2xl">
+<div class="absolute inset-0 opacity-40">
+<img alt="Estructura de acero en construcción" class="w-full h-full object-cover" data-alt="Technical steel structural skeleton under construction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIgD6U7YlWBKNAsjADYo9Hvy2P-r24z-5-HQfJYcw8NLSr19yuaam_6q1JuIyuxjVdjBKIJjXO2QchCmwE9DYp6VC6fe7n5ujPhu-kNnX1euXAEWdxWBx0WoLgyBwkWtbHVPx1nopGZrez0jWIWNG9eDxgTpMab9pHOxVumW-4xjZYKRS6DPrfiL8FDBMWqmjKx6ALFytf59NeVEz8bDETYS_xmPAkCIPFVBZpZulM04OyuP0WYMSccZ5We6HJWQ2r6-MNYYWkg04A"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent"></div>
+<div class="relative z-10 px-8 md:px-16 max-w-2xl">
+<div class="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+<span class="size-2 bg-primary rounded-full animate-pulse"></span>
+                        Ingeniería Civil de Vanguardia
+                    </div>
+<h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6 tracking-tight">
+                        Ingeniería que <span class="text-primary">Soporta</span> el Futuro
+                    </h1>
+<p class="text-lg text-slate-300 leading-relaxed mb-8">
+                        Diseño estructural con precisión técnica, modelación BIM y cumplimiento estricto de la normativa <strong>NSR-10</strong> para garantizar la máxima seguridad en sus proyectos.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-xl shadow-primary/30 flex items-center gap-2">
+                            Explorar Proyectos
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md px-8 py-4 rounded-xl font-bold transition-all border border-white/20">
+                            Ficha Técnica
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pillars Grid -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="mb-12 text-center md:text-left">
+<h2 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">Pilares de Excelencia Técnica</h2>
+<div class="h-1.5 w-24 bg-primary rounded-full mb-6 mx-auto md:mx-0"></div>
+<p class="text-slate-600 dark:text-slate-400 max-w-3xl">Aplicamos los más altos estándares de la ingeniería moderna para asegurar que cada centímetro de su obra sea eficiente, seguro y normativo.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Pillar 1 -->
+<div class="group bg-white dark:bg-slate-800/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all shadow-sm hover:shadow-xl">
+<div class="size-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">security</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Seguridad Estructural</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Mitigación proactiva de riesgos y solidez garantizada mediante análisis de cargas dinámicas y estáticas.
+                    </p>
+</div>
+<!-- Pillar 2 -->
+<div class="group bg-white dark:bg-slate-800/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all shadow-sm hover:shadow-xl">
+<div class="size-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">view_in_ar</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Modelación BIM</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Coordinación 3D avanzada para reducción de interferencias y errores constructivos en tiempo real.
+                    </p>
+</div>
+<!-- Pillar 3 -->
+<div class="group bg-white dark:bg-slate-800/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all shadow-sm hover:shadow-xl">
+<div class="size-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Optimización</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Eficiencia técnica y rentabilidad económica mediante la selección precisa de materiales y secciones.
+                    </p>
+</div>
+<!-- Pillar 4 -->
+<div class="group bg-white dark:bg-slate-800/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-all shadow-sm hover:shadow-xl">
+<div class="size-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Normativa NSR-10</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Diseños estrictamente apegados al Reglamento Colombiano de Construcción Sismo Resistente.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Diagnostics Section -->
+<section class="bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1">
+<div class="relative">
+<img alt="Plano arquitectónico y herramientas" class="rounded-3xl shadow-2xl relative z-10" data-alt="Technical blueprint with professional engineering tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx6xg9hPutmcOV4ZdyHyzXqk620fvn2lt3txo3oPnWOoHvdRz2c0IgXF6Y-nHjyRRfiq7jY8Nzu1_VDmXgpAT3hUOOfM5_8aQqSyuamJ4IEmpOcTaaKPvtxO3kKlfmYWj7BBqs-9Jl2k-RCKeuAEjPhSSWMHGm-02d0cbASA2NmS1xsl3_yKn1XXaqNQlnUhvqtqjJfxDjawLiJzZBZER_UbobJ2v_vk_tlvTNHeV_4le-CDeaIJPYIiZt2nMraQc2cl3TIKCBfJyT"/>
+<div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 rounded-2xl z-20 shadow-xl hidden md:block">
+<p class="text-4xl font-black mb-1">15+</p>
+<p class="text-xs font-bold uppercase tracking-wider opacity-80">Años de Experiencia</p>
+</div>
+<div class="absolute -top-6 -left-6 size-48 border-8 border-primary/20 rounded-full z-0"></div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-8 leading-tight">
+                            Revisión y <br/><span class="text-primary">Diagnóstico Estructural</span>
+</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
+                            No solo diseñamos desde cero; evaluamos la salud de estructuras existentes para garantizar su longevidad y seguridad operativa. Utilizamos tecnología de punta para identificar patologías y proponer soluciones de reforzamiento.
+                        </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+                                Evaluación de patología de materiales
+                            </li>
+<li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+                                Estudios de vulnerabilidad sísmica
+                            </li>
+<li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+                                Diseños de reforzamiento estructural
+                            </li>
+<li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 font-medium">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+                                Peritajes técnicos especializados
+                            </li>
+</ul>
+<button class="flex items-center gap-2 font-bold text-primary group">
+                            Solicitar evaluación técnica
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">trending_flat</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+<div class="bg-primary rounded-[3rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl shadow-primary/30">
+<div class="absolute top-0 right-0 size-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 size-64 bg-slate-950/10 rounded-full -ml-32 -mb-32"></div>
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-3xl md:text-5xl font-black mb-6 tracking-tight">¿Listo para construir con seguridad?</h2>
+<p class="text-white/80 text-lg mb-10 leading-relaxed">
+                        Nuestros ingenieros están listos para analizar su proyecto y ofrecerle la solución estructural más eficiente y segura del mercado colombiano.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-10 py-4 rounded-xl font-black text-lg hover:bg-slate-50 transition-colors shadow-lg">
+                            Contactar un Experto
+                        </button>
+<button class="bg-primary-900/20 border-2 border-white text-white px-10 py-4 rounded-xl font-black text-lg hover:bg-white/10 transition-colors">
+                            Ver Portafolio
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 text-white py-16 border-t border-slate-900">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-primary p-1 rounded-lg">
+<span class="material-symbols-outlined text-white text-2xl">architecture</span>
+</div>
+<span class="text-2xl font-black tracking-tighter">IGESCOL</span>
+</div>
+<p class="text-slate-400 max-w-sm mb-6">
+                        Soluciones integrales de ingeniería civil y diseño estructural. Comprometidos con la seguridad y la innovación tecnológica en Colombia.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 bg-slate-900 rounded-lg flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="size-10 bg-slate-900 rounded-lg flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Enlaces Rápidos</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Diseño Estructural</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Interventoría</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Consultoría BIM</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Geotecnia</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Contacto</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+                            Bogotá, D.C. - Colombia
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">call</span>
+                            +57 (601) 456 7890
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+                            info@igescol.com
+                        </li>
+</ul>
+</div>
+</div>
+<div class="pt-12 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500 font-medium">
+<p>© 2024 IGESCOL S.A.S. Todos los derechos reservados.</p>
+<div class="flex gap-8">
+<a class="hover:text-slate-300" href="#">Privacidad</a>
+<a class="hover:text-slate-300" href="#">Términos</a>
+<a class="hover:text-slate-300" href="#">Normativa NSR-10</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

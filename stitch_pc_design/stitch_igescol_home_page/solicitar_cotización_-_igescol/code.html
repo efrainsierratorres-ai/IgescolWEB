@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Solicitar Cotización | IGESCOL Ingeniería</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#1978e5", "background-light": "#f6f7f8", "background-dark": "#111821"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .form-input-focus:focus {
+            border-color: #ec5b13;
+            ring-color: #ec5b13;
+            outline: none;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#ec5b1322 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-200">
+<!-- Header / TopNavBar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-20 items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg text-white">
+<span class="material-symbols-outlined text-3xl">engineering</span>
+</div>
+<span class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white">IGESCOL</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Inicio</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Servicios</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Proyectos</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Nosotros</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors text-primary" href="#">Contacto</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg shadow-primary/20">
+                        Portal Clientes
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<main class="min-h-screen pb-20">
+<!-- Hero Section & Breadcrumb -->
+<div class="relative bg-slate-100 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 pt-12 pb-16 overflow-hidden">
+<div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+<div class="relative max-w-4xl mx-auto px-4">
+<nav class="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-6">
+<a class="hover:text-primary" href="#">Inicio</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-white font-semibold">Cotización</span>
+</nav>
+<h1 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 tracking-tight">
+                    Solicitar Cotización <span class="text-primary">Técnica</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+                    Obtenga una propuesta técnica detallada respaldada por estándares internacionales de ingeniería. Complete los campos a continuación para iniciar el proceso de evaluación.
+                </p>
+</div>
+</div>
+<!-- Form Container -->
+<div class="max-w-4xl mx-auto px-4 -mt-8 relative z-10">
+<form class="space-y-6">
+<!-- Section 1: Tipo de Servicio -->
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-6 border-l-4 border-primary pl-4">
+<span class="material-symbols-outlined text-primary font-bold">settings_suggest</span>
+<h2 class="text-xl font-bold uppercase tracking-wider text-slate-900 dark:text-white">1. Tipo de Servicio</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-2">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-tighter">Área de Especialidad</label>
+<select class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary transition-all">
+<option disabled="" selected="" value="">Seleccione una opción...</option>
+<option value="industrial">Ingeniería Industrial y Procesos</option>
+<option value="civil">Obras Civiles e Infraestructura</option>
+<option value="electrical">Sistemas Eléctricos y Potencia</option>
+<option value="mechanical">Mecánica y Piping</option>
+<option value="specialized">Consultoría Especializada</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Section 2: Información del Proyecto -->
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-6 border-l-4 border-primary pl-4">
+<span class="material-symbols-outlined text-primary font-bold">description</span>
+<h2 class="text-xl font-bold uppercase tracking-wider text-slate-900 dark:text-white">2. Información del Proyecto</h2>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-tighter">Nombre del Proyecto</label>
+<input class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="Ej: Modernización Planta Fase II" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-tighter">Descripción Técnica y Objetivos</label>
+<textarea class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="Detalle el alcance del trabajo, requerimientos técnicos y objetivos principales..." rows="4"></textarea>
+</div>
+</div>
+</div>
+<!-- Section 3: Ubicación y Presupuesto -->
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-6 border-l-4 border-primary pl-4">
+<span class="material-symbols-outlined text-primary font-bold">location_on</span>
+<h2 class="text-xl font-bold uppercase tracking-wider text-slate-900 dark:text-white">3. Ubicación y Viabilidad</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-tighter">Ciudad / Región</label>
+<input class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="Ej: Bogotá, Colombia" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-tighter">Presupuesto Estimado (USD/COP)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-mono">$</span>
+<input class="w-full h-14 pl-8 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary transition-all font-mono" placeholder="0.00" type="number"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Datos de Contacto -->
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-6 border-l-4 border-primary pl-4">
+<span class="material-symbols-outlined text-primary font-bold">badge</span>
+<h2 class="text-xl font-bold uppercase tracking-wider text-slate-900 dark:text-white">4. Información de Contacto</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-tighter">Nombre Completo</label>
+<input class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="Juan Pérez" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-tighter">Empresa / Organización</label>
+<input class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="Industrias ABC" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-tighter">Correo Electrónico</label>
+<input class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="juan@empresa.com" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-tighter">Teléfono de Contacto</label>
+<input class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary transition-all" placeholder="+57 300 000 0000" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Submit Area -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-4">
+<div class="flex items-start gap-3 max-w-md">
+<input class="mt-1 rounded text-primary focus:ring-primary border-slate-300" id="terms" type="checkbox"/>
+<label class="text-xs text-slate-500 dark:text-slate-400" for="terms">
+                            Acepto el tratamiento de mis datos personales de acuerdo con la política de privacidad de IGESCOL para la gestión de mi solicitud comercial.
+                        </label>
+</div>
+<button class="w-full md:w-auto min-w-[240px] bg-primary hover:bg-primary/90 text-white py-4 px-8 rounded-xl font-black text-lg uppercase tracking-widest shadow-2xl shadow-primary/30 flex items-center justify-center gap-3 transition-all hover:scale-[1.02]" type="submit">
+<span>Enviar Solicitud</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-primary p-2 rounded-lg text-white">
+<span class="material-symbols-outlined">engineering</span>
+</div>
+<span class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white uppercase">IGESCOL</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm mb-6 leading-relaxed">
+                        Líderes en soluciones integrales de ingeniería para el sector industrial, civil y energético. Excelencia técnica y compromiso con el desarrollo sostenible.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">call</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Servicios</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Ingeniería Civil</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Infraestructura Eléctrica</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Consultoría Industrial</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Gestión de Proyectos</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Contacto</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                            Bogotá D.C, Colombia
+                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">phone</span>
+                            +57 (601) 123 4567
+                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">mail</span>
+                            contacto@igescol.com
+                        </li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-100 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 uppercase tracking-widest">
+<p>© 2024 IGESCOL INGENIERÍA. TODOS LOS DERECHOS RESERVADOS.</p>
+<div class="flex gap-8">
+<a class="hover:text-primary" href="#">Términos y Condiciones</a>
+<a class="hover:text-primary" href="#">Privacidad</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

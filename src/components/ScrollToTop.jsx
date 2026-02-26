@@ -1,0 +1,25 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+const ScrollToTop = () => {
+    const { pathname, hash } = useLocation();
+
+    useEffect(() => {
+        // Si hay un hash, esperamos un poco a que el DOM cargue y luego hacemos scroll al elemento
+        if (hash) {
+            setTimeout(() => {
+                const id = hash.replace('#', '');
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 0);
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }, [pathname, hash]);
+
+    return null;
+};
+
+export default ScrollToTop;
